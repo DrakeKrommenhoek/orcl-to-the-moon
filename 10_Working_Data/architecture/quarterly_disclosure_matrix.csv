@@ -11,9 +11,9 @@ REV_040,Services revenue,DR,DR,DR,DR,DR,DR,DR,DR,
 REV_050,Total revenue,DR,DR,DR,DR,DR,DR,DR,DR,
 REV_070,Total revenue growth % (CC),GR,GR,GR,GR,GR,GR,GR,GR,Oracle-computed
 REV_110,Total cloud revenue (SaaS+IaaS),DS,DS,DS,DS,DS,DS,DS,DS,Release-level; confirm every quarter
-REV_120,OCI / IaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,"KEY GAP RISK: dollar disclosure is release-dependent; any quarter without it stays blank in L3 - AI estimates prohibited (C-03) | 2026-07-20 Gate 5A: FY26 Q1+ disclosed at exact $M in 10-Q footnote (rung 2), not just release - DS confirmed for FY26 Q1/Q4 (Q4 via FY-9M)."
+REV_120,OCI / IaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,"KEY GAP RISK: dollar disclosure is release-dependent; any quarter without it stays blank in L3 - AI estimates prohibited (C-03) | 2026-07-20 Gate 5A: FY26 Q1+ disclosed at exact $M in 10-Q footnote (rung 2), not just release - DS confirmed for FY26 Q1/Q4 (Q4 via FY-9M). | 2026-07-20 Gate 5B: FY25 quarters populated from exact-millions comparative in later SRC-013/SRC-016 releases (precision upgrade, D-016), not each period's own headline-only disclosure."
 REV_125,IaaS growth %,GR,GR,GR,GR,GR,GR,GR,GR,
-REV_130,Cloud application / SaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,Same caveat as REV_120 (C-03) | 2026-07-20 Gate 5A: same as REV_120.
+REV_130,Cloud application / SaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,"Same caveat as REV_120 (C-03) | 2026-07-20 Gate 5A: same as REV_120. | 2026-07-20 Gate 5B: FY25 quarters populated from exact-millions comparative in later SRC-013/SRC-016 releases (precision upgrade, D-016), not each period's own headline-only disclosure."
 REV_135,SaaS growth %,GR,GR,GR,GR,GR,GR,GR,GR,
 REV_140,Cloud services revenue (MD&A split),TBD,TBD,TBD,ANN,TBD,TBD,TBD,ANN,10-Q MD&A presence to confirm; Q4 via 10-K MD&A (FY26 blocked until SRC-024)
 REV_145,License support revenue (MD&A split),TBD,TBD,TBD,ANN,TBD,TBD,TBD,ANN,

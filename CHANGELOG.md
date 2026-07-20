@@ -2,6 +2,37 @@
 
 Material structural and analytical changes, newest first.
 
+## 2026-07-20 — Gate 5B: full historical extraction (FY2025 Q1 – FY2026 Q4)
+
+- Extended the Gate 5A pilot's two-file pattern to the remaining six quarters
+  (FY2025 Q1–Q4, FY2026 Q2–Q3), reusing the pilot's FY2026 Q1/Q4/annual values
+  verbatim (no re-transcription). Combined total: 839 provenanced values (475
+  reported / 256 calculated / 108 supplemental), 96 not-disclosed determinations.
+- New files: `10_Working_Data/raw_extractions/orcl_historical_quarterly_full.csv`,
+  `orcl_historical_quarterly_full_provenance.csv`,
+  `orcl_fy2025_q4_derivation_support.csv`, `GATE_5B_EXTRACTION_LOG.md`;
+  `10_Working_Data/reconciliations/orcl_historical_full_checks.csv`;
+  `10_Working_Data/templates/orcl_historical_quarterly_template_v2.csv` (125-row,
+  regenerated from the 137-field dictionary — original Gate 4 template untouched).
+- 70 new reconciliation checks (69 pass, 1 blocked, 0 fail); combined with the
+  Gate 5A pilot's 37 checks, 107 total checks run across both sessions, 103 pass /
+  0 fail / 4 blocked. CHECK_050 sum-of-quarters now closes for both fiscal years
+  across revenue, operating income, net income, depreciation, SBC, and cash flow.
+- **D-016:** documented two disclosure-evolution findings — no dedicated lease
+  supplemental footnote exists in the FY2025 Q1–Q3 10-Qs (BS_060/DEBT_050/
+  DEBT_060 genuinely not disclosed those quarters, confirmed structural not an
+  extraction gap); FY2025 exact-millions IaaS/SaaS dollars adopted from later
+  FY26-release recast comparatives (precision upgrade over each period's own
+  headline-billions disclosure). No field IDs changed.
+- **D-017:** the new full-extraction file pair supersedes the pilot files as the
+  Gate 6+ modeling input; pilot files retained unmodified as the Gate 5A audit
+  trail.
+- C-01 and C-02 quarterly series closed and tied to their FY25/FY26 annual anchors
+  (Gate 5A had resolved only the annual figures); C-06 quarterly series confirmed
+  as a routine, trackable disclosure across both years.
+- Created `00_project_control/GATE_5B_REVIEW.md`. No source files in `01_`–`09_`
+  modified; no AI-research values used (verified programmatically).
+
 ## 2026-07-20 — Gate 5A: historical extraction pilot (FY26 Q1 + FY26 Q4)
 
 - Branch note: this session's designated branch

@@ -105,3 +105,29 @@ acquisitions; CP vs short-term-financing split) — those cells are `not_disclos
 introduces a companion long-format file (`orcl_historical_quarterly_pilot_provenance.csv`,
 one row per populated value with source ID/filename/section/classification/GAAP-tag/
 formula/precision/status/notes). This two-file pattern is the standard for Gate 5B.
+
+## D-016 · 2026-07-20 · Gate 5B disclosure-evolution findings (lease footnote + IaaS/SaaS precision)
+Two independent Oracle disclosure-architecture changes were confirmed during full
+extraction, distinct from the Q-18 statement-caption reclassification (D-013):
+(a) the dedicated lease supplemental-balance-sheet footnote (ROU assets,
+current/non-current liability split) does not exist in the FY2025 Q1-Q3 10-Qs —
+first appears at FY2025 Q4/annual (10-K) and becomes a standard quarterly footnote
+from FY2026 Q1 onward. BS_060/DEBT_050/DEBT_060 are therefore genuinely
+`not_disclosed` for FY2025 Q1-Q3, not an extraction gap; (b) exact-millions IaaS/SaaS
+quarterly dollars (REV_120/REV_130) for FY2025 were never disclosed in their own
+period's release (headline billions only) but were later published as recast
+comparatives in the FY2026 Q1 and Q4 releases (SRC-013/SRC-016). Per the precedence
+rules, a later official Oracle release remains rung 3 regardless of which period it
+covers, so these comparative figures were adopted as the primary FY2025 REV_120/130
+values (precision upgrade), with both the original headline disclosure and the
+later exact-millions source cited in every affected row. Dictionary notes and the
+disclosure matrix updated accordingly; no field IDs changed.
+
+## D-017 · 2026-07-20 · Gate 5B extraction file naming (full extraction supersedes pilot for modeling)
+The Gate 5A pilot files (`orcl_historical_quarterly_pilot.csv` and its provenance)
+are retained unmodified as the audit record of the two-quarter proof-of-concept.
+Gate 5B's full eight-quarter extraction lives in new files
+(`orcl_historical_quarterly_full.csv` / `_full_provenance.csv`) built from a
+superset script that reuses the pilot's FY2026 Q1/Q4/annual entries verbatim
+(no re-transcription, no value drift) and adds FY2025 Q1-Q4 + FY2026 Q2-Q3. The
+full file is the one to use for Gate 6 reconciliation and Gate 7+ forecasting.

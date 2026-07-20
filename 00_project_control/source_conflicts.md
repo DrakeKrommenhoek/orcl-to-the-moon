@@ -28,6 +28,11 @@ Naming: "Research Pack" = `01_Research_Outputs/ORCL_Public_Markets_Research_Pack
   filed figure. Convention adopted (pending Q-11/Q-13 for the EV bridge): gross debt =
   borrowings only; preferred ($4,954M), finance leases ($7,701M) and operating leases
   ($30,190M) tracked as separate components, never silently merged.
+- **Gate 5B addendum (2026-07-20):** quarterly gross-debt series now populated for
+  all eight quarters (FY25 Q1 $84,515M → FY25 Q4 $92,568M → FY26 Q1 $91,315M → FY26
+  Q4 $129,541M), each tying exactly to DEBT_010+DEBT_020 on that period's own
+  balance sheet. FY26 Q3 debt ($134,605M) is the peak quarter, just before the
+  preferred issuance and subsequent paydown activity bring FY26 Q4 to $129,541M.
 
 ## C-02 — FY26 depreciation: ~$4.8B vs. ~$7.6B
 - Research Pack quarterly depreciation rows sum to ~$4.78B for FY26 ($1,020+$1,100+$1,220+$1,438M).
@@ -46,6 +51,11 @@ Naming: "Research Pack" = `01_Research_Outputs/ORCL_Public_Markets_Research_Pack
   + Q4 2,415 = 7,623 exactly (CHK-Q4-20); full four-quarter tie completes at Gate 5B.
   Model definition rule (D-014): depreciation (PROF_140) and amortization of
   intangibles are never combined without the explicit PROF_150/EBITDA formulas.
+- **Gate 5B addendum (2026-07-20):** quarterly depreciation tie now closed for both
+  fiscal years. FY25: 804+908+1,003+1,152=3,867 (10-K exact). FY26: 1,351+1,704+
+  2,153+2,415=7,623 (10-K exact, CHKX-04). Depreciation roughly doubled quarter over
+  quarter across FY26 as the AI-infrastructure buildout accelerated (Q1 $1,351M →
+  Q4 $2,415M), consistent with the PP&E growth pattern (Note 4, FY26 10-K).
 
 ## C-03 — Research Pack quarterly OCI and SaaS revenue splits are suspiciously round
 - Every OCI quarterly figure FY24 Q1–FY26 Q4 is a round hundred ($1,500, $1,600, … $5,800M); SaaS likewise.
