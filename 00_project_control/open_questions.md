@@ -5,14 +5,14 @@ Conflicts between existing sources live in `source_conflicts.md`, not here.
 
 ## A. Blocking before extraction (Gate 5)
 
-- **Q-01** Acquire the FY2026 10-K (FYE 2026-05-31). It is the controlling source for FY26
-  balance sheet, leases, debt, depreciation, RPO detail, and financing. URLs in
-  `00_MASTER_CHECKLIST.md`. *(Owner: user — sandbox cannot reach sec.gov.)*
-  **Update 2026-07-20 (Gate 4 session):** an upload was attempted but the file never
-  reached the session filesystem (full disk + remote-branch sweep found nothing).
-  Re-provide it — most reliable path is committing the PDF to `02_Annual_Filings/` as
-  `ORCL_2026_10-K_FY_Ended_2026-05-31.pdf`. Manifest ID **SRC-024 is reserved** for it;
-  `source_to_field_mapping.csv` already references SRC-024_RESERVED.
+- **Q-01** ~~Acquire the FY2026 10-K (FYE 2026-05-31).~~ **Resolved 2026-07-20 (post-Gate-4
+  sync session):** the user committed the filing directly to `origin/main` (commit
+  `d136102`, "Add files via upload"). It was merged into the working branch, identity
+  verified (Form 10-K, Oracle Corporation, Commission File 001-35992, FYE 2026-05-31,
+  signed 2026-06-22), moved to `02_Annual_Filings/ORCL_2026_10-K_FY_Ended_2026-05-31.pdf`
+  via `git mv`, and registered as **SRC-024** in `source_manifest.csv`. Contents have
+  **not** been extracted — that is Gate 5 work, not done in this sync session. C-01,
+  C-02, and C-06 remain open until Gate 5/6 extraction and reconciliation.
 - **Q-02** Which provider produced each research .docx (ChatGPT vs. Gemini)? Affects only
   attribution/labeling, not authority rank (both rank 6). *(Owner: user.)*
 - **Q-03** ~~Should recast quarterly history start at FY25 Q1 or FY24 Q1?~~

@@ -2,6 +2,16 @@
 
 Date: 2026-07-20 · Session: Gate 4 only (no extraction, no forecasting, no valuation)
 
+> **Addendum (2026-07-20, post-Gate-4 branch-sync session):** the FY2026 10-K referenced
+> below as "missing"/"reserved" has since been supplied — the user committed it to
+> `origin/main` (commit `d136102`), it was merged into this working branch, identity was
+> verified (Form 10-K, Oracle Corporation, FYE 2026-05-31, Commission File 001-35992,
+> signed 2026-06-22), and it is now registered as **SRC-024** at
+> `02_Annual_Filings/ORCL_2026_10-K_FY_Ended_2026-05-31.pdf`. Its *contents* have not been
+> extracted — §6, §8, §9, §12, §13 below describe the pre-sync state and are otherwise
+> left as originally written; treat every "blocked on SRC-024 arriving" statement below as
+> now "blocked on SRC-024 *extraction*," which is Gate 5 work, not yet performed.
+
 ## 1. Files reviewed
 
 `CLAUDE.md`, `README.md`, `CURRENT_STATE.md`, `00_project_control/*` (all), git state

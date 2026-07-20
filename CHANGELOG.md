@@ -2,6 +2,21 @@
 
 Material structural and analytical changes, newest first.
 
+## 2026-07-20 — Branch sync: FY2026 10-K merged in and registered as SRC-024
+
+- User committed `ORCL_2026_10-K_FY_Ended_2026-05-31.pdf` directly to `origin/main`
+  (commit `d136102`, "Add files via upload").
+- Merged `origin/main` into `claude/oracle-equity-model-mhmjq4` via a standard merge
+  commit (no conflicts, no force-push, no history rewrite); all Gate 1–4 work confirmed
+  intact post-merge.
+- Verified filing identity (Form 10-K, Oracle Corporation, Commission File 001-35992,
+  FYE 2026-05-31, signed 2026-06-22; 139 pages; no MD5 duplicate; not an LFS pointer).
+- `git mv`'d it to `02_Annual_Filings/ORCL_2026_10-K_FY_Ended_2026-05-31.pdf`; registered
+  as **SRC-024** in `source_manifest.csv`; replaced all `SRC-024_RESERVED` placeholders
+  with `SRC-024` in `source_to_field_mapping.csv` (64 occurrences).
+- Annotated C-01/C-02/C-06 and Q-01 to reflect source availability. **Did not** extract
+  any figures or resolve any conflict — that remains Gate 5/6 work.
+
 ## 2026-07-20 — Gate 4: historical-data architecture
 
 - Created `10_Working_Data/` (architecture, templates) and `11_Analysis/historical/`.

@@ -12,15 +12,22 @@ Naming: "Research Pack" = `01_Research_Outputs/ORCL_Public_Markets_Research_Pack
 - Research Pack (§1.2 and §3.5): gross debt $135.0B at FY26 year end.
 - Framework (§5 balance-sheet table): current borrowings $7.2B + noncurrent $122.3B = **$129.5B** gross debt.
 - Gap: ~$5.5B. Possible causes: inclusion/exclusion of the ~$5B mandatory convertible preferred, finance leases, or estimate error.
-- Resolution source: FY26 10-K balance sheet + debt footnote (**not yet in repo**). Interim: FY26 Q4 earnings release / slides.
+- Resolution source: FY26 10-K balance sheet + debt footnote — **now in repo as SRC-024**
+  (`02_Annual_Filings/ORCL_2026_10-K_FY_Ended_2026-05-31.pdf`, registered 2026-07-20).
+  Interim: FY26 Q4 earnings release / slides.
 - *Gate 4 (2026-07-20):* designated resolution test = DEBT_030 computed from the FY26 10-K balance sheet (SRC-024); record whether the $135B claim included preferred/leases.
+- **Status (2026-07-20, post-Gate-4 sync):** SRC-024 identity verified but its content has
+  not been extracted. **STILL OPEN** — not resolved by this update.
 
 ## C-02 — FY26 depreciation: ~$4.8B vs. ~$7.6B
 - Research Pack quarterly depreciation rows sum to ~$4.78B for FY26 ($1,020+$1,100+$1,220+$1,438M).
 - Framework: "FY26 depreciation increased to approximately $7.6 billion."
 - Gap is large (~60%). Likely the Research Pack rows are a narrower definition (e.g., excluding amortization or lease depreciation) or simply estimated.
-- Resolution source: FY26 10-K cash-flow statement and PP&E footnote.
+- Resolution source: FY26 10-K cash-flow statement and PP&E footnote — **now in repo as
+  SRC-024**, registered 2026-07-20.
 - *Gate 4 (2026-07-20):* designated resolution test = sum of standalone quarterly PROF_140 (YTD-differenced) vs. FY26 10-K annual depreciation (reconciliation plan §4).
+- **Status (2026-07-20, post-Gate-4 sync):** source available; extraction not yet
+  performed. **STILL OPEN.**
 
 ## C-03 — Research Pack quarterly OCI and SaaS revenue splits are suspiciously round
 - Every OCI quarterly figure FY24 Q1–FY26 Q4 is a round hundred ($1,500, $1,600, … $5,800M); SaaS likewise.
@@ -42,8 +49,12 @@ Naming: "Research Pack" = `01_Research_Outputs/ORCL_Public_Markets_Research_Pack
 ## C-06 — ~$260B uncommenced operating-lease commitments is press-sourced, unverified
 - Framework §5 cites "a financial-publication review" (investors.com) for ~$260B of leases signed but not yet commenced, and itself says the exact 10-K footnote must be verified.
 - This number materially affects committed-capital and lease-adjusted leverage analysis.
-- Resolution source: FY26 10-K lease footnote (**not yet in repo**).
+- Resolution source: FY26 10-K lease footnote — **now in repo as SRC-024**, registered
+  2026-07-20.
 - *Gate 4 (2026-07-20):* mapped to DEBT_070 (annual-only); press-sourced ~$260B remains unusable until the footnote value is extracted from SRC-024.
+- **Status (2026-07-20, post-Gate-4 sync):** source available; footnote not yet read.
+  **STILL OPEN** — the ~$260B figure remains unusable until extracted directly from
+  SRC-024.
 
 ## C-07 — RPO series: definitions and rounding
 - Research Pack RPO series ($65B → $638B) is round-numbered and mixes points that Oracle disclosed with different emphasis (total RPO vs. cRPO). FY26 Q1 $455B, Q2 $523B, Q3 $553B, Q4 $638B need per-quarter verification against releases/10-Qs, including what share is current (~12% per Framework) and the ~$75B prepaid/BYOH claim.
