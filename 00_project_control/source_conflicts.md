@@ -100,6 +100,26 @@ Naming: "Research Pack" = `01_Research_Outputs/ORCL_Public_Markets_Research_Pack
 ## C-07 — RPO series: definitions and rounding
 - Research Pack RPO series ($65B → $638B) is round-numbered and mixes points that Oracle disclosed with different emphasis (total RPO vs. cRPO). FY26 Q1 $455B, Q2 $523B, Q3 $553B, Q4 $638B need per-quarter verification against releases/10-Qs, including what share is current (~12% per Framework) and the ~$75B prepaid/BYOH claim.
 - Resolution: extraction pass over the 8 earnings releases + 10-Qs; transcript language when transcripts are obtained.
+- **RESOLVED 2026-07-20 (Gate 6).** Full eight-quarter RPO_010 series extracted
+  directly from each period's 10-Q/10-K revenue-recognition footnote (rung 1–2,
+  controlling) and cross-checked against every release headline (rung 3):
+  FY25 Q1 $99.1B / Q2 $97.3B / Q3 $130.2B / Q4 $137.8B; FY26 Q1 $455.3B / Q2
+  $523.3B / Q3 $552.6B / Q4 $638.0B. **All eight footnote values round exactly to
+  their release headline** (e.g. Q3 FY26 footnote $552.6B → headline "$553
+  billion"); no cross-document discrepancy found in any quarter. cRPO (RPO_030)
+  recomputed as RPO_010 × RPO_020 for all eight quarters and labeled `calculated`
+  per the reconciliation plan (FY25: $37.7B/$37.9B/$40.4B/$45.5B; FY26:
+  $45.5B/$52.3B/$66.3B/$76.6B) — matches the Framework's implied ~10–12%
+  current-RPO share for FY26 exactly (rungs 1–2 confirm rung-6 estimate was
+  directionally right, but the filed % is now the controlling figure, not the
+  Framework's narrative estimate). The Research Pack's round-numbered 12-quarter
+  RPO series and its FY24 starting point ($65B) are **not** independently
+  verified by this extraction (FY24 is out of the required FY25–FY26 scope per
+  Q-03) and remain unusable pending an FY24 extension. The $75B prepaid/BYOH
+  claim is separately confirmed from a primary source (FY26 Q4 release, "The
+  prepaid and customer supplied hardware portions of our large AI contracts now
+  total $75 billion") — see KPI_060 in the full extraction; this was a Gate 5A
+  finding, reconfirmed here as consistent with no new conflict.
 
 ## C-08 — GAAP vs. non-GAAP labeling risk in Research Pack aggregates
 - Research Pack quarterly GAAP/non-GAAP operating income, margins, and "Calculated EBITDA" are not tied to a stated reconciliation. EBITDA rows imply D&A ≈ the (suspect) depreciation rows in C-02.

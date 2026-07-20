@@ -2,6 +2,25 @@
 
 Material structural and analytical changes, newest first.
 
+## 2026-07-20 — Gate 6: historical reconciliation (cross-document verification)
+
+- Executed the remaining `HISTORICAL_RECONCILIATION_PLAN.md` "Execution order at
+  Gate 6" steps not already covered during extraction: cross-document GAAP
+  statement checks (10-Q vs. same-quarter release) for all six quarters where
+  both exist, cross-document balance-sheet checks (same six quarters plus
+  FY25/FY26 Q4 release-vs-10-K), RPO footnote-vs-release checks for all eight
+  quarters, and a bridge/L3 (CHECK_020) consolidation across all eight quarters.
+- **Zero discrepancies found anywhere** — every cross-checked figure matches
+  exactly between independently-transcribed sources.
+- **C-07 (RPO series) RESOLVED**: full eight-quarter footnote-vs-release
+  cross-check ties 8/8; cRPO recomputed for every quarter. Research Pack's
+  FY24-inclusive series remains out of scope/unusable (Q-03).
+- New file: `10_Working_Data/reconciliations/orcl_gate6_cross_document_checks.csv`
+  (33 new checks, all pass) and `orcl_gate6_consolidated_dashboard.csv` (140-row
+  merge of all three sessions' checks: 136 pass / 4 blocked / 0 fail).
+- No architecture changes — pure verification pass, no field IDs/formulas/values
+  added or changed. Created `00_project_control/GATE_6_REVIEW.md`.
+
 ## 2026-07-20 — Gate 5B: full historical extraction (FY2025 Q1 – FY2026 Q4)
 
 - Extended the Gate 5A pilot's two-file pattern to the remaining six quarters
