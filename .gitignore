@@ -1,0 +1,33 @@
+# Credentials and environment — never commit
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+token*.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Office temp/lock files
+~$*
+.~lock.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Scratch and caches (keep out of the audit trail)
+scratch/
+tmp/
+*.tmp
+.cache/
+
+# Excel autosave artifacts
+*.xlk
