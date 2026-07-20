@@ -11,9 +11,9 @@ REV_040,Services revenue,DR,DR,DR,DR,DR,DR,DR,DR,
 REV_050,Total revenue,DR,DR,DR,DR,DR,DR,DR,DR,
 REV_070,Total revenue growth % (CC),GR,GR,GR,GR,GR,GR,GR,GR,Oracle-computed
 REV_110,Total cloud revenue (SaaS+IaaS),DS,DS,DS,DS,DS,DS,DS,DS,Release-level; confirm every quarter
-REV_120,OCI / IaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,KEY GAP RISK: dollar disclosure is release-dependent; any quarter without it stays blank in L3 - AI estimates prohibited (C-03)
+REV_120,OCI / IaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,"KEY GAP RISK: dollar disclosure is release-dependent; any quarter without it stays blank in L3 - AI estimates prohibited (C-03) | 2026-07-20 Gate 5A: FY26 Q1+ disclosed at exact $M in 10-Q footnote (rung 2), not just release - DS confirmed for FY26 Q1/Q4 (Q4 via FY-9M)."
 REV_125,IaaS growth %,GR,GR,GR,GR,GR,GR,GR,GR,
-REV_130,Cloud application / SaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,Same caveat as REV_120 (C-03)
+REV_130,Cloud application / SaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,Same caveat as REV_120 (C-03) | 2026-07-20 Gate 5A: same as REV_120.
 REV_135,SaaS growth %,GR,GR,GR,GR,GR,GR,GR,GR,
 REV_140,Cloud services revenue (MD&A split),TBD,TBD,TBD,ANN,TBD,TBD,TBD,ANN,10-Q MD&A presence to confirm; Q4 via 10-K MD&A (FY26 blocked until SRC-024)
 REV_145,License support revenue (MD&A split),TBD,TBD,TBD,ANN,TBD,TBD,TBD,ANN,
@@ -53,7 +53,7 @@ BS_070,Deferred revenue,DR,DR,DR,DR,DR,DR,DR,DR,
 DEBT_010,Current borrowings,DR,DR,DR,DR,DR,DR,DR,DR,
 DEBT_020,Noncurrent borrowings,DR,DR,DR,DR,DR,DR,DR,DR,
 DEBT_030,Gross debt,CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,C-01 resolution at FY26 year-end requires SRC-024
-DEBT_070,Uncommenced lease commitments,ND,ND,ND,ANN,ND,ND,ND,ANN,FY25 from SRC-002; FY26 BLOCKED until SRC-024 (C-06)
+DEBT_070,Uncommenced lease commitments,ND,ND,ND,ANN,ND,ND,ND,ANN,FY25 from SRC-002; FY26 BLOCKED until SRC-024 (C-06) | 2026-07-20 Gate 5A: 10-Qs DO disclose uncommenced lease commitments (FY26 Q1: $99.8B) - quarterly availability upgraded from ND; FY26 10-K: $260B.
 DEBT_100,Preferred/mandatory convertible,ND,ND,ND,ND,ND,TBD,TBD,TBD,Issued during FY26; detail requires SRC-024 + prospectus (Q-11)
 SHARE_010,Basic weighted shares,DR,DR,DR,DR,DR,DR,DR,DR,
 SHARE_020,Diluted weighted shares,DR,DR,DR,DR,DR,DR,DR,DR,
@@ -63,7 +63,7 @@ KPI_030,Utilization commentary,ND,ND,ND,ND,ND,ND,ND,ND,Requires transcripts (Q-0
 RPO_010,Total RPO,DR,DR,DR,DR,DR,DR,DR,DR,10-Q footnote; FY26 Q4 via release/slides until SRC-024
 RPO_020,% RPO next 12 months,DR,DR,DR,DR,DR,DR,DR,DR,10-Q footnote
 RPO_030,cRPO (calculated),CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,From rounded %; label calculated
-RPO_050,RPO duration buckets,ND,ND,ND,ANN,ND,ND,ND,ANN,Granularity TBD
+RPO_050,RPO duration buckets,ND,ND,ND,ANN,ND,ND,ND,ANN,"Granularity TBD | 2026-07-20 Gate 5A: duration buckets disclosed quarterly in FY26 10-Q RPO footnotes, not annual-only."
 CAP_010,Customer prepayments funding capex,ND,ND,ND,ND,TBD,TBD,TBD,TBD,FY26 phenomenon; requires SRC-024/transcripts (C-05)
 CAP_030,Net cash capex (mgmt-defined),ND,ND,ND,ND,ND,ND,TBD,DS,Introduced with FY26 Q4 guidance discussion; capture definition
 CAP_050,Capacity contribution index,ND,ND,ND,ND,ND,ND,ND,ND,Analytical forecast construct only (Q-15)

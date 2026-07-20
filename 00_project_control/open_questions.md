@@ -43,8 +43,15 @@ Conflicts between existing sources live in `source_conflicts.md`, not here.
 - **Q-09** ~~Adopt the Framework's six-stream revenue architecture as the canonical
   recast?~~ **Resolved 2026-07-20 → D-009**: adopted as Layer 3 (REV_310–360) with the
   reported-to-analytical bridge in `HISTORICAL_DATA_ARCHITECTURE.md` §7.
-- **Q-10** Fix an explicit EBITDA definition (treatment of SBC, leases, Ampere-type gains)
-  before any EV/EBITDA work.
+- **Q-10** ~~Fix an explicit EBITDA definition (treatment of SBC, leases, Ampere-type gains)
+  before any EV/EBITDA work.~~ **Recommendation issued 2026-07-20 (Gate 5A → D-014,
+  provisional):** primary EBITDA = GAAP operating income + CF-statement depreciation +
+  amortization of intangibles (SBC stays an expense; restructuring stays in; one-time
+  investment gains excluded by construction; EBITDA not EBITDAR). Full analysis with
+  FY26 numbers in `11_Analysis/historical/EBITDA_DEFINITION_MEMO.md`. PROF_160 is
+  populated under this definition, labeled provisional. **Remaining sliver: user
+  sign-off** (per Gate 4 review §10(f)); moves to decision_log permanently once
+  ratified.
 - **Q-11** Preferred-security treatment: debt-like vs. as-converted (Framework §15 rules
   out mixing both). Decide once terms are verified from the 8-A/prospectus.
 - **Q-12** NTM window convention for Oracle vs. peers with different fiscal year ends (C-10).
@@ -72,8 +79,25 @@ triaged into answerable-from-filings vs. permanently-assumption-based during Gat
 - **Q-17** Should prior-quarter earnings slide decks (FY25 Q1 – FY26 Q3) be acquired?
   Checklist marks optional; guidance slides would strengthen the guidance-history table.
 
-- **Q-18** *(added 2026-07-20, Gate 4)* Did Oracle's FY26 Q1+ reporting change alter the
-  *filed income-statement* revenue categories, or only headline/release presentation
-  (Research Pack claims a Total Cloud vs. Software regrouping — C-04)? Determines whether
-  Layer 1 needs a dual-presentation mapping across FY25/FY26. Resolve at Gate 5 by
-  inspecting SRC-006 (FY26 Q1 10-Q) statement captions vs. SRC-003 (FY25 Q1).
+- **Q-18** *(added 2026-07-20, Gate 4)* ~~Did Oracle's FY26 Q1+ reporting change alter the
+  *filed income-statement* revenue categories, or only headline/release presentation?~~
+  **RESOLVED 2026-07-20 (Gate 5A).** It is a **true reclassification of the filed
+  income statement**, effective FY26 Q1, with prior-year comparatives recast — not a
+  headline-only change. Evidence: SRC-006 statements (PDF p.7) present revenues as
+  Cloud / Software / Hardware / Services vs. SRC-003's Cloud services and license
+  support / Cloud license and on-premise license / Hardware / Services; SRC-006 Note 1
+  (p.11) states "We reclassed certain revenues and other related disclosures to conform
+  to the current period's presentation for all periods presented... did not affect total
+  revenue, income from operations or net income." Recast ties exactly (FY25 Q1: Cloud
+  5,623 + Software 5,766 = 11,389 = 10,519 + 870). Component detail moved to a new
+  "revenues by offerings" footnote (Software license / Software support; Cloud
+  applications / Cloud infrastructure — now exact millions, an upgrade). Expense side:
+  "Cloud services and license support" → "Cloud and software" is a **relabel only**
+  (prior-year value 2,597 unchanged). Two further changes inside FY26: (i) the 10-K
+  annual statement (and Q4 release) merge "Acquisition related and other" +
+  "Restructuring" into **"Restructuring and other"** (recast: FY25 75+299=374) while
+  FY26 10-Qs kept separate lines; (ii) from Q3 FY26 a **"Preferred stock dividends"**
+  line and "Net income available to common shareholders" subtotal appear, and EPS is
+  now "attributable to common shareholders." Architecture response: dual-presentation
+  Layer 1 via new fields REV_011/REV_021/COGS_011/OPEX_065/REV_147 with documented
+  bridge (D-013); each period stored as filed; no silent restatement of FY25 rows.

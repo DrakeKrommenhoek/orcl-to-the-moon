@@ -1,0 +1,38 @@
+check_id,dictionary_check,fiscal_period,formula,expected_result,actual_result,difference,tolerance,pass_fail,explanation,required_follow_up
+CHK-Q1-01,CHECK_010,FY2026_Q1,REV_011+REV_021+REV_030+REV_040 = REV_050,14926,7186+5721+670+1349 = 14926,0,0,PASS,Filed revenue captions additive (FY26 presentation).,
+CHK-Q1-02,CHECK_020,FY2026_Q1,sum(REV_310..REV_360) = REV_050,14926,3347+3839+4955+766+670+1349 = 14926,0,0,PASS,Six-stream bridge exact under FY26 by-offerings disclosures - no residual rounding.,
+CHK-Q1-03,CHECK_030,FY2026_Q1,REV_120+REV_130 = REV_110,7186,3347+3839 = 7186,0,1,PASS,,
+CHK-Q1-04,CHECK_040,FY2026_Q1,REV_021 - REV_147 = REV_145,4955,5721-766 = 4955,0,1,PASS,FY26-presentation analog of support-residual check.,
+CHK-Q1-05,CHECK_050-intra,FY2026_Q1,REV_050 - OPEX_080 = PROF_010,4277,14926-10649 = 4277,0,0,PASS,Expenses reconcile to operating income.,
+CHK-Q1-06,CHECK_050-intra,FY2026_Q1,PROF_010 - PROF_050 + PROF_060 = PROF_070; PROF_070 - PROF_080 = PROF_100,3427; 2927,4277-923+73 = 3427; 3427-500 = 2927,0,0,PASS,Pretax reconciles to net income.,
+CHK-Q1-07,CHECK_070,FY2026_Q1,PROF_100 / SHARE_020 = PROF_120,1.01,2927/2909 = 1.0062,0.0038,0.01,PASS,Diluted; basic 2927/2826 = 1.0357 vs 1.04 also passes.,
+CHK-Q1-08,CHECK_090,FY2026_Q1,PROF_010 + SBC + amort + acq + restr = PROF_030,6236,4277+1124+420+13+402 = 6236,0,0,PASS,Non-GAAP bridge exact; reconciling items captured.,
+CHK-Q1-09,CHECK_070-ng,FY2026_Q1,PROF_110 / SHARE_020 = PROF_130,1.47,4283/2909 = 1.4723,0.0023,0.01,PASS,,
+CHK-Q1-10,CF_030 defn,FY2026_Q1,CF_015 - CF_025 = CF_030,-362,8140-8502 = -362,0,0,PASS,OCF and capex reconcile to FCF.,
+CHK-Q1-11,CHECK_080-lite,FY2026_Q1,DEBT_010 + DEBT_020 = DEBT_030,91315,9079+82236 = 91315,0,0,PASS,Balance-sheet debt components reconcile to gross debt.,
+CHK-Q1-12,CHECK_100,FY2026_Q1,BS_010 change = CF net change,-341,10445-10786 = -341 vs CF -341,0,0,PASS,Cash tie incl. FX effect line (27).,
+CHK-Q1-13,RPO cross-doc,FY2026_Q1,10-Q footnote RPO vs release headline,455.3,455 (release),0.3,0.5,PASS,Footnote controls (455.3); release rounds to whole billions.,
+CHK-Q1-14,SBC cross-doc,FY2026_Q1,CF SBC = release non-GAAP SBC,1124,1124,0,1,PASS,,
+CHK-Q1-15,BS_070 defn,FY2026_Q1,Deferred revenues current + non-current,current+non-current,"12,098 current only",,,BLOCKED,Non-current deferred revenues not separately disclosed in Q1 10-Q; field carries current-only value with note.,Gate 5B: check 10-K deferred revenue note for FY-end split; consider field-definition amendment.
+CHK-Q4-01,Q4 deriv - revenue,FY2026_Q4,FY - 9M vs release direct (5 revenue captions),9913/6824/924/1523/19184,9913/6824/924/1523/19184 (all diff 0),0,1,PASS,Annual-minus-nine-month agrees exactly with directly disclosed Q4 revenues.,
+CHK-Q4-02,Q4 deriv - expenses,FY2026_Q4,FY - 9M vs release direct (8 expense captions),see derivation file,"5 exact; 4 lines differ by 1 (COGS_020, OPEX_020, OPEX_040, OPEX_065)",1,1,PASS,"Differences of $1M attributable to recast rounding; release direct values adopted; total opex ties exactly (13,051).",
+CHK-Q4-03,Q4 deriv - op income,FY2026_Q4,20606 - 14473 = 6133 vs direct 6133,6133,6133,0,1,PASS,,
+CHK-Q4-04,Q4 deriv - below op,FY2026_Q4,interest/non-op/pretax/tax/NI FY - 9M vs direct,1438/675/5370/1066/4304,1439/675/5369/1065/4304,1,1,PASS,"Interest, pretax, tax each differ by 1 (rounding); NI exact.",
+CHK-Q4-05,Preferred/NIAC,FY2026_Q4,Preferred div FY-9M = direct; NI - pref = NIAC,81; 4223,103-22 = 81; 4304-81 = 4223,0,1,PASS,,
+CHK-Q4-06,CHECK_070,FY2026_Q4,NIAC / SHARE_020 = PROF_120,1.45,4223/2915 = 1.4487,0.0013,0.01,PASS,EPS computed on income available to COMMON (new FY26 mechanic).,
+CHK-Q4-07,CHECK_090,FY2026_Q4,6133+1203+431+823 = PROF_030,8590,8590,0,0,PASS,,
+CHK-Q4-08,CHECK_070-ng,FY2026_Q4,non-GAAP NIAC / SHARE_020 = PROF_130,2.11,6153/2915 = 2.1108,0.0008,0.01,PASS,,
+CHK-Q4-09,CHECK_060,FY2026_Q4,9M + derived Q4 = FY for every cash-flow line,re-summation,17357+14620 = 31977; 39170+16493 = 55663; all financing lines re-sum,0,0,PASS,YTD differencing integrity holds for all derivable lines.,
+CHK-Q4-10,CF_035 valid,FY2026_Q4,FY OCF - FY capex vs Oracle-stated FY FCF,-23700 (stated -23.7B),31977-55663 = -23686,14,50,PASS,Difference within billions-rounding of Oracle's stated figure.,
+CHK-Q4-11,CHECK_030,FY2026_Q4,REV_120+REV_130 = REV_110; vs headline billions,9913; 5.8/4.1,5787+4126 = 9913; 5.787/4.126,0,1,PASS,Derived sub-streams cross-foot exactly; headline validation within 0.05B.,
+CHK-Q4-12,CHECK_040,FY2026_Q4,REV_147+REV_145 = REV_021,6824,1881+4943 = 6824,0,1,PASS,,
+CHK-Q4-13,CHECK_080-lite,FY2026_Q4,DEBT_010+DEBT_020 = DEBT_030 = Note 6 carrying total,129541,7199+122342 = 129541 = 129541 (Note 6),0,0,PASS,C-01 resolution value confirmed against debt footnote.,
+CHK-Q4-14,CHECK_080,FY2026_Q4,FY debt roll-forward: opening + issuance - repayments - CP net = closing,129541,92568+46093-6942-2285 = 129434,107,150,PASS,Residual $107M attributable to non-cash amortization of discounts/issuance costs (unamortized discount grew 348->564) and FX/other; not separately disclosed.,Gate 5B/6: rebuild quarterly roll-forward across all four quarters; confirm residual attribution.
+CHK-Q4-15,CHECK_100,FY2026_Q4,BS cash change (Q3->Q4) = CF-derived net change,-7166,31289-38455 = -7166; 20503-27669 = -7166,0,0,PASS,,
+CHK-Q4-16,RPO cross-doc,FY2026_Q4,10-K RPO = release RPO; Q3+delta = Q4,638; 638,638 = 638; 553+85 = 638,0,0.5,PASS,,
+CHK-Q4-17,Share-count distinction,FY2026_Q4,Weighted-average (2878/2915) distinct from period-end outstanding (2880) and cover-page (Jun 12 2026),distinct treatment,weighted-average used for EPS; period-end for capitalization,,,PASS,Q4 share-count treatment explicitly distinguished; cover-page count (different date) not used.,
+CHK-Q4-18,CHECK_050 struct,FY2026_Q4,Q2+Q3 implied two ways: FY-Q1-Q4 vs 9M-Q1 (total revenue),33247,67357-14926-19184 = 33247; 48173-14926 = 33247,0,0,PASS,Q1-Q4 annual summation structurally possible; full test needs Q2/Q3 extraction (Gate 5B).,Gate 5B: run CHECK_050 on all flow fields.
+CHK-Q4-19,Interest income tie,FY2026_Q4,Q1 + (9M-Q1) + Q4 = FY,780,103+388+289 = 780,0,1,PASS,,
+CHK-Q4-20,C-02 depreciation tie,FY2026_Q4,Q1 + (9M-Q1) + Q4 = FY depreciation,7623,1351+3857+2415 = 7623,0,1,PASS,"C-02 resolved: FY26 depreciation = 7,623 (depreciation only, CF basis).",
+CHK-Q4-21,CF_040 derivation,FY2026_Q4,Acquisitions Q4 = FY - 9M,n/a,"REFUSED - caption mismatch (FY line includes acquisitions, 9M line does not)",,,BLOCKED,Derivation refused per caption-consistency rule; CF_040 marked not_disclosed.,Gate 5B: check whether 10-K investing note splits acquisitions; else leave blank.
+CHK-Q4-22,CAP_020/CP derivation,FY2026_Q4,Short-term capex financing Q4 = FY - 9M,n/a,"REFUSED for individual lines - 9M combines CP and short-term financing (2,279) vs two FY lines (-2,285 / +3,345); only combined Q4 (-1,219) derivable",,,BLOCKED,Combined figure recorded in derivation file (DRV-40); CAP_020 Q4 not_disclosed.,Gate 5B: extract Q2 10-Q captions to locate when presentation split; keep combined series as fallback.

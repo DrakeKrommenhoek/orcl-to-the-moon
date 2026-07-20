@@ -65,3 +65,43 @@ C-08; extends D-005).
 RPO_, CAP_, VAL_, CHECK_) in `orcl_data_dictionary.csv`. Field IDs are permanent; scripts
 and spreadsheets reference IDs, never labels. ID gaps (10s) allow insertion without
 renumbering.
+
+## D-013 · 2026-07-20 · Dual-presentation Layer 1 for the FY26 reclassification (Q-18)
+Oracle's FY26 filings reclassify the filed income statement (Cloud/Software captions,
+"Cloud and software" expense relabel, 10-K-level "Restructuring and other" merge,
+preferred-dividend EPS mechanics). Rather than redefining existing fields, five fields
+were added — REV_011 (Cloud, as filed FY26), REV_021 (Software, as filed FY26),
+REV_147 (Software license, by offerings), COGS_011 (Cloud and software expenses),
+OPEX_065 (Restructuring and other, combined caption) — and the Layer 3 bridge was
+amended for FY26-presentation periods: REV_330 = REV_145 (software support is now
+directly disclosed, no residual), REV_340 = REV_147. Pre-FY26 fields (REV_010/020,
+COGS_010, REV_140) stay defined as-was and are `not_disclosed` from FY26 Q1. Each
+period is stored exactly as filed; the recast comparatives in FY26 filings are the
+documented bridge (they tie exactly). Field IDs remain stable; no extracted value was
+ever redefined. Dictionary/mapping updated to 137 rows; template regeneration deferred
+to Gate 5B start (original Gate 4 template preserved unchanged).
+
+## D-014 · 2026-07-20 · EBITDA definition (provisional — awaiting user ratification, Q-10)
+Primary historical EBITDA (PROF_160) = GAAP operating income (PROF_010) + cash-flow-
+statement depreciation (PROF_140) + amortization of intangibles (CF basis). SBC is NOT
+added back; restructuring/acquisition costs stay in (a separate "adjusted EBITDA"
+series may add them back at Gate 13); operating-lease expense stays in (EBITDA, not
+EBITDAR — consistent with borrowings-only gross debt per C-01); one-time investment
+gains (Ampere, Bloom) are excluded by construction because they sit below operating
+income. Cross-check series: non-GAAP operating income + depreciation. FY26 values:
+primary 29,900; NI-up variant 33,447; non-GAAP variant 36,549 — materially different,
+never interchangeable. Full memo: 11_Analysis/historical/EBITDA_DEFINITION_MEMO.md.
+Provisional until the user signs off; PROF_160 values are labeled accordingly.
+
+## D-015 · 2026-07-20 · Q4 value precedence and pilot provenance format
+(a) Where the Q4 release directly discloses a standalone Q4 statement line, the release
+value is stored as `reported` and the FY-minus-9M derivation is the validation (five
+lines differ by exactly $1M due to recast rounding — documented, within tolerance).
+Where no direct Q4 disclosure exists (cash flows, depreciation, interest income,
+by-offerings sub-streams), the FY−9M value is stored as `calculated` with both source
+citations. Derivations are refused where FY and 9M captions are inconsistent (CF_040
+acquisitions; CP vs short-term-financing split) — those cells are `not_disclosed`.
+(b) The template-shaped extraction file cannot carry per-cell provenance, so the pilot
+introduces a companion long-format file (`orcl_historical_quarterly_pilot_provenance.csv`,
+one row per populated value with source ID/filename/section/classification/GAAP-tag/
+formula/precision/status/notes). This two-file pattern is the standard for Gate 5B.

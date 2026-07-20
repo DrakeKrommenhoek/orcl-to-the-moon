@@ -2,6 +2,38 @@
 
 Material structural and analytical changes, newest first.
 
+## 2026-07-20 — Gate 5A: historical extraction pilot (FY26 Q1 + FY26 Q4)
+
+- Branch note: this session's designated branch
+  `claude/oracle-historical-extraction-pilot-r6o3ov` was created from stale `main`;
+  it was reset onto the prior working-branch tip `e06f7ae` (no unique commits lost —
+  old tip was an ancestor) so all Gate 1–4 work and SRC-024 are included.
+- Created `10_Working_Data/raw_extractions/` with the pilot value file
+  (`orcl_historical_quarterly_pilot.csv`, template-shaped, 125 rows), a long-format
+  per-value provenance file (249 values: 95 Q1, 95 Q4, 59 FY26-annual; 141 reported /
+  66 calculated / 42 supplemental; 28 explicit not-disclosed rows),
+  `orcl_fy2026_q4_derivation_support.csv` (44 FY-minus-9M derivations incl. 2 refusals
+  for caption mismatch), and `PILOT_EXTRACTION_LOG.md`.
+- Created `10_Working_Data/reconciliations/orcl_historical_pilot_checks.csv`
+  (37 checks: 34 pass, 0 fail, 3 blocked-with-reason).
+- Resolved **Q-18** (FY26 filed-statement reclassification confirmed), **C-01**
+  (gross debt $129,541M; $135B claim = borrowings + preferred), **C-02** (FY26
+  depreciation $7,623M), **C-06** ($260B uncommenced leases, off balance sheet,
+  future-commitment treatment). Issued **Q-10** EBITDA recommendation
+  (`11_Analysis/historical/EBITDA_DEFINITION_MEMO.md`), provisional pending user
+  sign-off.
+- Architecture (D-013/D-014/D-015): added 5 dual-presentation fields
+  (REV_011/REV_021/REV_147/COGS_011/OPEX_065) to the data dictionary and source
+  mapping (now 137 rows each, 1:1); amended the Layer 3 bridge for FY26 presentation;
+  cleared stale "SRC-024 NOT YET RECEIVED" mapping annotations; matrix notes
+  corrected (REV_120/130 footnote-level, DEBT_070/RPO_050 quarterly). Gate 4 template
+  left untouched (regeneration deferred to Gate 5B).
+- Manifest: capture-defect notes on SRC-013/SRC-016 (right-edge table clipping —
+  FY26 quarterly supplemental columns missing from the Q4 release capture);
+  SRC-024 marked extracted.
+- Created `00_project_control/GATE_5A_PILOT_REVIEW.md`. No source files in `01_`–`09_`
+  modified; no values taken from AI research reports (verified programmatically).
+
 ## 2026-07-20 — Branch sync: FY2026 10-K merged in and registered as SRC-024
 
 - User committed `ORCL_2026_10-K_FY_Ended_2026-05-31.pdf` directly to `origin/main`

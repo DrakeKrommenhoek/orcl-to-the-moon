@@ -16,8 +16,18 @@ Naming: "Research Pack" = `01_Research_Outputs/ORCL_Public_Markets_Research_Pack
   (`02_Annual_Filings/ORCL_2026_10-K_FY_Ended_2026-05-31.pdf`, registered 2026-07-20).
   Interim: FY26 Q4 earnings release / slides.
 - *Gate 4 (2026-07-20):* designated resolution test = DEBT_030 computed from the FY26 10-K balance sheet (SRC-024); record whether the $135B claim included preferred/leases.
-- **Status (2026-07-20, post-Gate-4 sync):** SRC-024 identity verified but its content has
-  not been extracted. **STILL OPEN** — not resolved by this update.
+- **RESOLVED 2026-07-20 (Gate 5A pilot).** From SRC-024 balance sheet (PDF p.66) and
+  Note 6 (p.85-86): notes payable and other borrowings current **$7,199M** +
+  non-current **$122,342M** = **DEBT_030 = $129,541M** carrying value (gross principal
+  $130,105M less $564M unamortized discount/issuance costs). The Framework's $129.5B
+  is exactly Oracle's reported borrowings — **this is the model's gross-debt figure.**
+  The Research Pack's "$135.0B" is best explained as borrowings + the $4,954M
+  6.50% Series D Mandatory Convertible Preferred (= $134.5B, loosely rounded to $135B)
+  — i.e., a *definitional* difference (preferred included), not a different date; the
+  residual ~$0.5B is rank-6 rounding/estimation slop and is not reproducible from any
+  filed figure. Convention adopted (pending Q-11/Q-13 for the EV bridge): gross debt =
+  borrowings only; preferred ($4,954M), finance leases ($7,701M) and operating leases
+  ($30,190M) tracked as separate components, never silently merged.
 
 ## C-02 — FY26 depreciation: ~$4.8B vs. ~$7.6B
 - Research Pack quarterly depreciation rows sum to ~$4.78B for FY26 ($1,020+$1,100+$1,220+$1,438M).
@@ -26,8 +36,16 @@ Naming: "Research Pack" = `01_Research_Outputs/ORCL_Public_Markets_Research_Pack
 - Resolution source: FY26 10-K cash-flow statement and PP&E footnote — **now in repo as
   SRC-024**, registered 2026-07-20.
 - *Gate 4 (2026-07-20):* designated resolution test = sum of standalone quarterly PROF_140 (YTD-differenced) vs. FY26 10-K annual depreciation (reconciliation plan §4).
-- **Status (2026-07-20, post-Gate-4 sync):** source available; extraction not yet
-  performed. **STILL OPEN.**
+- **RESOLVED 2026-07-20 (Gate 5A pilot).** FY2026 **depreciation = $7,623M**
+  (SRC-024 cash-flow statement, PDF p.70; Note 4 PP&E states "$7.6 billion", p.83).
+  This is depreciation ONLY (cash-flow add-back on PP&E, which per Note 4 includes
+  finance-lease ROU assets); amortization of intangibles is a separate $1,671M line.
+  The Framework's "~$7.6B" is therefore correct. The Research Pack's ~$4.78B quarterly
+  series is an **unsupported estimate** (D-005/C-03 family) and is unusable. Designated
+  quarterly tie verified in the pilot to the extent derivable: Q1 1,351 + (9M−Q1) 3,857
+  + Q4 2,415 = 7,623 exactly (CHK-Q4-20); full four-quarter tie completes at Gate 5B.
+  Model definition rule (D-014): depreciation (PROF_140) and amortization of
+  intangibles are never combined without the explicit PROF_150/EBITDA formulas.
 
 ## C-03 — Research Pack quarterly OCI and SaaS revenue splits are suspiciously round
 - Every OCI quarterly figure FY24 Q1–FY26 Q4 is a round hundred ($1,500, $1,600, … $5,800M); SaaS likewise.
@@ -52,9 +70,22 @@ Naming: "Research Pack" = `01_Research_Outputs/ORCL_Public_Markets_Research_Pack
 - Resolution source: FY26 10-K lease footnote — **now in repo as SRC-024**, registered
   2026-07-20.
 - *Gate 4 (2026-07-20):* mapped to DEBT_070 (annual-only); press-sourced ~$260B remains unusable until the footnote value is extracted from SRC-024.
-- **Status (2026-07-20, post-Gate-4 sync):** source available; footnote not yet read.
-  **STILL OPEN** — the ~$260B figure remains unusable until extracted directly from
-  SRC-024.
+- **RESOLVED 2026-07-20 (Gate 5A pilot).** SRC-024 Note 9 (PDF p.92): "As of May 31,
+  2026, we had **$260 billion** of additional lease commitments, substantially all
+  related to data center arrangements, that are generally expected to **commence
+  between the first quarter of fiscal 2027 and fiscal 2029** and for terms of
+  **fifteen to nineteen years** that were **not reflected on our consolidated balance
+  sheet** ... or in the maturities table." Includes a lease with a guarantee of up to
+  **$3.3B** of the lessor's borrowing maturing September 2026. Characterization:
+  (a) stated in whole billions, as-of 2026-05-31; (b) **excluded** from the reported
+  operating/finance lease liabilities ($30,190M / $7,701M); (c) treatment decision —
+  model as a **scheduled future commitment** (capacity build / committed-capital
+  analysis, DEBT_070), **not** in current gross debt or net debt; it becomes debt-like
+  only as leases commence and go on balance sheet. Related datapoints now primary:
+  FY26 Q1 10-Q disclosed $99.8B (same footnote type), so the series is trackable
+  quarterly; unconditional purchase obligations are separate ($13,309M, mostly data
+  center power, + $19B post-year-end cloud-infrastructure commitments). The
+  press-sourced ~$260B figure is superseded by the filed value.
 
 ## C-07 — RPO series: definitions and rounding
 - Research Pack RPO series ($65B → $638B) is round-numbered and mixes points that Oracle disclosed with different emphasis (total RPO vs. cRPO). FY26 Q1 $455B, Q2 $523B, Q3 $553B, Q4 $638B need per-quarter verification against releases/10-Qs, including what share is current (~12% per Framework) and the ~$75B prepaid/BYOH claim.
