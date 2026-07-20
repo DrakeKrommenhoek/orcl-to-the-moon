@@ -1,0 +1,69 @@
+field_id,display_label,FY2025_Q1,FY2025_Q2,FY2025_Q3,FY2025_Q4,FY2026_Q1,FY2026_Q2,FY2026_Q3,FY2026_Q4,notes
+#LEGEND,DR = directly reported in filed statement,,,,,,,,,
+#LEGEND,DS = supplemental dollar disclosure (release/slides/MD&A) - confirm at extraction,,,,,,,,,
+#LEGEND,GR = growth rate only | CALC = calculable from disclosed | YTD = year-to-date only,,,,,,,,,
+#LEGEND,ANN = annual only | EST = secondary estimate only (unusable) | ND = not disclosed | TBD = confirm at extraction,,,,,,,,,
+#LEGEND,Statuses are EXPECTED based on Oracle disclosure practice; Gate 5 must confirm each cell against the actual document,,,,,,,,,
+REV_010,Cloud services and license support revenue,DR,DR,DR,DR,DR,DR,DR,DR,Q4 from Q4 release stmt; FY26 Q4 annual validation awaits SRC-024. FY26 presentation change to verify (Q-18)
+REV_020,Cloud license and on-premise license revenue,DR,DR,DR,DR,DR,DR,DR,DR,
+REV_030,Hardware revenue,DR,DR,DR,DR,DR,DR,DR,DR,
+REV_040,Services revenue,DR,DR,DR,DR,DR,DR,DR,DR,
+REV_050,Total revenue,DR,DR,DR,DR,DR,DR,DR,DR,
+REV_070,Total revenue growth % (CC),GR,GR,GR,GR,GR,GR,GR,GR,Oracle-computed
+REV_110,Total cloud revenue (SaaS+IaaS),DS,DS,DS,DS,DS,DS,DS,DS,Release-level; confirm every quarter
+REV_120,OCI / IaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,KEY GAP RISK: dollar disclosure is release-dependent; any quarter without it stays blank in L3 - AI estimates prohibited (C-03)
+REV_125,IaaS growth %,GR,GR,GR,GR,GR,GR,GR,GR,
+REV_130,Cloud application / SaaS revenue $,DS,DS,DS,DS,DS,DS,DS,DS,Same caveat as REV_120 (C-03)
+REV_135,SaaS growth %,GR,GR,GR,GR,GR,GR,GR,GR,
+REV_140,Cloud services revenue (MD&A split),TBD,TBD,TBD,ANN,TBD,TBD,TBD,ANN,10-Q MD&A presence to confirm; Q4 via 10-K MD&A (FY26 blocked until SRC-024)
+REV_145,License support revenue (MD&A split),TBD,TBD,TBD,ANN,TBD,TBD,TBD,ANN,
+REV_310,OCI revenue (analytical),CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,Only where REV_120 disclosed; else ND for that quarter
+REV_320,Cloud applications (analytical),CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,Only where REV_130 disclosed; else ND
+REV_330,Software support (analytical residual),CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,Requires REV_010 and REV_110 same-basis
+REV_340,Software license (analytical = REV_020),CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,
+REV_350,Hardware (analytical = REV_030),CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,
+REV_360,Services (analytical = REV_040),CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,
+COGS_010,Cloud svcs & license support expenses,DR,DR,DR,DR,DR,DR,DR,DR,
+COGS_020,Hardware expenses,DR,DR,DR,DR,DR,DR,DR,DR,
+COGS_030,Services expenses,DR,DR,DR,DR,DR,DR,DR,DR,
+COGS_310,OCI gross margin % (analytical),ND,ND,ND,ND,ND,ND,ND,ND,Forecast-only; never backfill
+OPEX_010,Sales and marketing,DR,DR,DR,DR,DR,DR,DR,DR,
+OPEX_020,R&D,DR,DR,DR,DR,DR,DR,DR,DR,
+OPEX_030,G&A,DR,DR,DR,DR,DR,DR,DR,DR,
+OPEX_040,Amortization of intangibles,DR,DR,DR,DR,DR,DR,DR,DR,
+OPEX_070,Stock-based compensation,YTD,YTD,YTD,CALC,YTD,YTD,YTD,CALC,Also in release non-GAAP tables per quarter (DS)
+PROF_010,GAAP operating income,DR,DR,DR,DR,DR,DR,DR,DR,
+PROF_030,Non-GAAP operating income,DS,DS,DS,DS,DS,DS,DS,DS,Release reconciliation table each quarter
+PROF_050,Interest expense,DR,DR,DR,DR,DR,DR,DR,DR,
+PROF_060,"Non-operating income, net",DR,DR,DR,DR,DR,DR,DR,DR,
+PROF_100,GAAP net income,DR,DR,DR,DR,DR,DR,DR,DR,
+PROF_120,GAAP diluted EPS,DR,DR,DR,DR,DR,DR,DR,DR,
+PROF_130,Non-GAAP diluted EPS,DS,DS,DS,DS,DS,DS,DS,DS,
+PROF_140,Depreciation,YTD,YTD,YTD,CALC,YTD,YTD,YTD,CALC,C-02 open; FY26 annual anchor requires SRC-024
+PROF_160,EBITDA (defined),ND,ND,ND,ND,ND,ND,ND,ND,Blocked by Q-10 definition; then CALC
+CF_010,Operating cash flow,YTD,YTD,YTD,CALC,YTD,YTD,YTD,CALC,
+CF_020,Capital expenditures,YTD,YTD,YTD,CALC,YTD,YTD,YTD,CALC,
+CF_030,Free cash flow (standalone),CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,From CF_015 - CF_025 after differencing
+CF_050,Debt issuance,YTD,YTD,YTD,CALC,YTD,YTD,YTD,CALC,
+CF_060,Debt repayment,YTD,YTD,YTD,CALC,YTD,YTD,YTD,CALC,
+CF_070,Equity issuance,YTD,YTD,YTD,CALC,YTD,YTD,YTD,CALC,FY26 ATM/preferred detail needs SRC-024
+BS_010,Cash and equivalents,DR,DR,DR,DR,DR,DR,DR,DR,Period-end; FY26 Q4 via release BS until SRC-024
+BS_020,Marketable securities,DR,DR,DR,DR,DR,DR,DR,DR,
+BS_070,Deferred revenue,DR,DR,DR,DR,DR,DR,DR,DR,
+DEBT_010,Current borrowings,DR,DR,DR,DR,DR,DR,DR,DR,
+DEBT_020,Noncurrent borrowings,DR,DR,DR,DR,DR,DR,DR,DR,
+DEBT_030,Gross debt,CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,C-01 resolution at FY26 year-end requires SRC-024
+DEBT_070,Uncommenced lease commitments,ND,ND,ND,ANN,ND,ND,ND,ANN,FY25 from SRC-002; FY26 BLOCKED until SRC-024 (C-06)
+DEBT_100,Preferred/mandatory convertible,ND,ND,ND,ND,ND,TBD,TBD,TBD,Issued during FY26; detail requires SRC-024 + prospectus (Q-11)
+SHARE_010,Basic weighted shares,DR,DR,DR,DR,DR,DR,DR,DR,
+SHARE_020,Diluted weighted shares,DR,DR,DR,DR,DR,DR,DR,DR,
+KPI_010,Fusion ERP growth %,GR,GR,GR,GR,GR,GR,GR,GR,Growth-only; no dollars - never impute
+KPI_020,NetSuite growth %,GR,GR,GR,GR,GR,GR,GR,GR,Growth-only
+KPI_030,Utilization commentary,ND,ND,ND,ND,ND,ND,ND,ND,Requires transcripts (Q-04); currently no source in repo
+RPO_010,Total RPO,DR,DR,DR,DR,DR,DR,DR,DR,10-Q footnote; FY26 Q4 via release/slides until SRC-024
+RPO_020,% RPO next 12 months,DR,DR,DR,DR,DR,DR,DR,DR,10-Q footnote
+RPO_030,cRPO (calculated),CALC,CALC,CALC,CALC,CALC,CALC,CALC,CALC,From rounded %; label calculated
+RPO_050,RPO duration buckets,ND,ND,ND,ANN,ND,ND,ND,ANN,Granularity TBD
+CAP_010,Customer prepayments funding capex,ND,ND,ND,ND,TBD,TBD,TBD,TBD,FY26 phenomenon; requires SRC-024/transcripts (C-05)
+CAP_030,Net cash capex (mgmt-defined),ND,ND,ND,ND,ND,ND,TBD,DS,Introduced with FY26 Q4 guidance discussion; capture definition
+CAP_050,Capacity contribution index,ND,ND,ND,ND,ND,ND,ND,ND,Analytical forecast construct only (Q-15)

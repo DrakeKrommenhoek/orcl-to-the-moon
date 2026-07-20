@@ -1,65 +1,80 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-20 (organizational pass, first Claude Code session on this repo)
-Branch: `claude/oracle-equity-model-mhmjq4`
+Last updated: 2026-07-20 (Gate 4 session — historical-data architecture)
+Branch: `claude/oracle-equity-model-mhmjq4` (tracks origin; remote = DrakeKrommenhoek/orcl-to-the-moon)
 
 ## Current phase
 
-**Gates 1–3 complete (organizational portion).** Gate 4 (historical-data architecture)
-not started. Numeric conflict resolution deferred to Gates 5–6 by design.
+**Gate 4 COMPLETE.** Gates 1–3 completed earlier on 2026-07-20. Next gate: **Gate 5
+(data extraction)** — partially unblocked (see blockers).
 
 ## Completed work
 
-- Full workspace inventory; all 23 files opened and verified against their filenames
-  (PDF page-1 checks, MD5 duplicate scan — zero duplicates).
-- Repository reorganized into the checklist's numbered structure via `git mv` (no
-  content changes, no deletions). Audit trail: `00_project_control/PROPOSED_FILE_MOVE_MAP.md`.
-- Created: `CLAUDE.md`, `README.md`, `CURRENT_STATE.md`, `CHANGELOG.md`, `.gitignore`,
-  and in `00_project_control/`: `project_scope.md`, `source_manifest.csv`,
-  `SOURCE_INVENTORY_SUMMARY.md`, `source_conflicts.md` (11 conflicts C-01…C-11),
-  `open_questions.md` (Q-01…Q-17 + Framework §16 list), `decision_log.md` (D-001…D-008),
-  `PROPOSED_FILE_MOVE_MAP.md`.
-- Both AI research documents read in full and characterized; their known defects are
-  registered as conflicts.
+- Gates 1–3: inventory, manifest (23 sources), duplicate review, conflict register
+  (C-01…C-11), governance file set. See earlier section of this file's git history.
+- Gate 4 (this session), no numerical extraction performed:
+  - `11_Analysis/historical/HISTORICAL_DATA_ARCHITECTURE.md` — 3-layer design (L1 as
+    filed / L2 explicit supplemental disclosures / L3 six-stream analytical + bridge)
+  - `10_Working_Data/architecture/orcl_data_dictionary.csv` — 132 fields, 13 families,
+    stable IDs (the script/Excel interface)
+  - `10_Working_Data/architecture/source_to_field_mapping.csv` — 132 rows, 1:1 with
+    dictionary; SRC-024 reserved for the FY26 10-K
+  - `10_Working_Data/architecture/quarterly_disclosure_matrix.csv` — expected disclosure
+    status per field per quarter (DR/DS/GR/CALC/YTD/ANN/EST/ND/TBD)
+  - `10_Working_Data/templates/orcl_historical_quarterly_template.csv` — 120 extractable
+    rows × 8 quarters + annual columns, empty by design
+  - `11_Analysis/historical/HISTORICAL_RECONCILIATION_PLAN.md` — Gate 6 spec incl. YTD
+    differencing formulas and check battery
+  - `10_Working_Data/architecture/EXTRACTION_PRECEDENCE_RULES.md` — 9-rung ladder,
+    12 handling rules
+  - `00_project_control/GATE_4_REVIEW.md` — full gate review
+  - Decisions D-009…D-012 logged; Q-18 opened; Q-09 resolved; Q-03 settled; C-01/02/06
+    annotated with designated resolution tests
 
 ## Work in progress
 
 None mid-flight. Clean stopping point.
 
-## Key decisions made (full text in decision_log.md)
-
-Checklist folder structure adopted (D-001); git-mv-only reorganization (D-002/003);
-AI-report OCI/SaaS quarterly splits demoted to estimates (D-005); manifest keyed by
-SRC-### IDs (D-006); git strategy set, LFS deferred (D-007).
-
 ## Known issues / blockers
 
-1. **FY2026 10-K missing** — controlling source; blocks C-01/C-02/C-06 resolution (user
-   must download; sandbox cannot reach sec.gov — URLs in `00_project_control/00_MASTER_CHECKLIST.md`).
-2. All 8 earnings-call transcripts missing; 2025 Analyst Day deck missing.
-3. User thesis template (`01_Research_Outputs/ORCL_User_Thesis_and_Questions.docx`) is blank
-   — blocks Gate 8 scenario approval and instrument choice.
-4. Research Pack contains internally inconsistent FY26 revenue rows and unlabeled
-   estimates — do not extract from it (C-03/C-04/C-08).
-5. Comp market data single-sourced, as-of 2026-07-17/20, will be stale by first valuation
-   date (C-09).
-6. FactSet MCP connector present but unauthenticated (candidate consensus source, Q-08).
+1. **FY2026 10-K still missing (SRC-024 reserved).** An upload was attempted during the
+   Gate 4 session but the file never reached the session filesystem. Re-provide it —
+   most reliable: commit the PDF to `02_Annual_Filings/ORCL_2026_10-K_FY_Ended_2026-05-31.pdf`.
+   Blocks: FY26 Q4/annual extraction, C-01/C-02/C-06 resolution, preferred terms (Q-11).
+2. All 8 earnings-call transcripts missing (Q-04); analyst-day deck missing (Q-05).
+3. User thesis template still blank (Q-06) — blocks Gate 8.
+4. EBITDA definition undecided (Q-10) — PROF_160 computation blocked.
+5. FY26 filed-statement presentation change unverified (Q-18) — first thing to check at
+   Gate 5.
+6. FactSet MCP connector present but unauthenticated (Q-08).
 
 ## Next recommended action
 
-1. User: drop in FY26 10-K (+ transcripts, analyst-day deck if available) and fill the
-   thesis template.
-2. Claude: register new arrivals in the manifest, then run **Gate 4** — design the
-   historical-data architecture (schema for the six-stream quarterly recast FY25 Q1 –
-   FY26 Q4, data dictionary, reconciliation plan) in `10_Working_Data/data_dictionary/`.
-   Gate 4 can start even before the 10-K arrives; Gate 5 extraction should wait for it.
+Gate 5, scope A (unblocked): extract FY25 Q1 – FY26 Q3 from 10-Qs + releases into the
+template, plus FY26 Q4 release-level data; FY25 annual ties vs SRC-002. Scope B (blocked
+until SRC-024): FY26 annual anchors, FY26 Q4 filing-grade validation, C-01/02/06
+resolution. If SRC-024 has arrived: register it in the manifest first (identity check,
+FYE 2026-05-31), then run full-scope Gate 5.
 
-## Exact restart prompt for the next session
+## Exact restart prompt for the next session (Gate 5)
 
-> Read CLAUDE.md, CURRENT_STATE.md, and the files in 00_project_control/ (especially
-> open_questions.md, decision_log.md, source_conflicts.md). Register any newly added
-> source files in source_manifest.csv per D-006. Then execute Gate 4: propose the
-> historical-data architecture — quarterly recast schema (six revenue streams per D-005/
-> Q-09), field-level data dictionary, source-to-field mapping using SRC IDs, and the
-> Gate 6 reconciliation plan. Do not extract numbers yet and do not modify any file in
-> 01_–09_. If the FY26 10-K has been added, prioritize planning C-01/C-02/C-06 resolution.
+> Read CLAUDE.md, CURRENT_STATE.md, and all of 00_project_control/ (especially
+> GATE_4_REVIEW.md, open_questions.md, decision_log.md, source_conflicts.md), then
+> 11_Analysis/historical/HISTORICAL_DATA_ARCHITECTURE.md, HISTORICAL_RECONCILIATION_PLAN.md,
+> and 10_Working_Data/architecture/EXTRACTION_PRECEDENCE_RULES.md. If the FY26 10-K is
+> now in 02_Annual_Filings/, validate its identity (Form 10-K, FYE 2026-05-31) and
+> register it as SRC-024 in source_manifest.csv before anything else. Then execute Gate 5
+> data extraction: populate 10_Working_Data/templates/orcl_historical_quarterly_template.csv
+> (working copy in 10_Working_Data/raw_extractions/, template itself stays blank) for
+> FY2025 Q1 – FY2026 Q4 following the three-layer rules, the precedence ladder, and
+> blank-beats-guess (D-011). Resolve Q-18 (FY26 statement captions) first. Record source
+> ID + section for every value; classify every cell reported/calculated; do not resolve
+> conflicts without primary support; do not populate any Layer 3 stream except via the
+> documented bridge; leave not-disclosed cells blank with status not_disclosed. Do not
+> start Gate 6 reconciliation beyond the intra-document checks needed to trust the
+> transcription; do not build the Excel model.
+
+## Restart note
+
+If this file and the architecture docs disagree, the architecture docs govern structure;
+this file governs sequencing/status.

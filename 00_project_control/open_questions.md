@@ -8,11 +8,17 @@ Conflicts between existing sources live in `source_conflicts.md`, not here.
 - **Q-01** Acquire the FY2026 10-K (FYE 2026-05-31). It is the controlling source for FY26
   balance sheet, leases, debt, depreciation, RPO detail, and financing. URLs in
   `00_MASTER_CHECKLIST.md`. *(Owner: user — sandbox cannot reach sec.gov.)*
+  **Update 2026-07-20 (Gate 4 session):** an upload was attempted but the file never
+  reached the session filesystem (full disk + remote-branch sweep found nothing).
+  Re-provide it — most reliable path is committing the PDF to `02_Annual_Filings/` as
+  `ORCL_2026_10-K_FY_Ended_2026-05-31.pdf`. Manifest ID **SRC-024 is reserved** for it;
+  `source_to_field_mapping.csv` already references SRC-024_RESERVED.
 - **Q-02** Which provider produced each research .docx (ChatGPT vs. Gemini)? Affects only
   attribution/labeling, not authority rank (both rank 6). *(Owner: user.)*
-- **Q-03** Should recast quarterly history start at FY25 Q1 (Framework's recommendation,
-  fully covered by current holdings) or FY24 Q1 (Research Pack's span, which would require
-  acquiring four FY24 quarterly sources)? *(Recommend FY25 Q1 start; decide at Gate 4.)*
+- **Q-03** ~~Should recast quarterly history start at FY25 Q1 or FY24 Q1?~~
+  **Settled at Gate 4 (2026-07-20):** required history = FY25 Q1 – FY26 Q4; FY24 is an
+  optional later extension that would require acquiring FY24 quarterly sources. Remaining
+  open sliver: whether the user wants that extension at all.
 - **Q-04** Obtain the 8 earnings-call transcripts (FY25 Q1 – FY26 Q4). *(Owner: user;
   quartr.com link in checklist.)*
 - **Q-05** Obtain Oct 16, 2025 Financial Analyst Meeting materials (long-term targets,
@@ -34,8 +40,9 @@ Conflicts between existing sources live in `source_conflicts.md`, not here.
 
 ## C. Methodology decisions to make (Gates 4, 9)
 
-- **Q-09** Adopt the Framework's six-stream revenue architecture (OCI, cloud apps, support,
-  license, hardware, services) as the canonical recast? *(Recommended; formalize at Gate 4.)*
+- **Q-09** ~~Adopt the Framework's six-stream revenue architecture as the canonical
+  recast?~~ **Resolved 2026-07-20 → D-009**: adopted as Layer 3 (REV_310–360) with the
+  reported-to-analytical bridge in `HISTORICAL_DATA_ARCHITECTURE.md` §7.
 - **Q-10** Fix an explicit EBITDA definition (treatment of SBC, leases, Ampere-type gains)
   before any EV/EBITDA work.
 - **Q-11** Preferred-security treatment: debt-like vs. as-converted (Framework §15 rules
@@ -64,3 +71,9 @@ triaged into answerable-from-filings vs. permanently-assumption-based during Gat
   control). Current ~50 MB is fine.
 - **Q-17** Should prior-quarter earnings slide decks (FY25 Q1 – FY26 Q3) be acquired?
   Checklist marks optional; guidance slides would strengthen the guidance-history table.
+
+- **Q-18** *(added 2026-07-20, Gate 4)* Did Oracle's FY26 Q1+ reporting change alter the
+  *filed income-statement* revenue categories, or only headline/release presentation
+  (Research Pack claims a Total Cloud vs. Software regrouping — C-04)? Determines whether
+  Layer 1 needs a dual-presentation mapping across FY25/FY26. Resolve at Gate 5 by
+  inspecting SRC-006 (FY26 Q1 10-Q) statement captions vs. SRC-003 (FY25 Q1).
