@@ -26,9 +26,16 @@ Conflicts between existing sources live in `source_conflicts.md`, not here.
 
 ## B. Blocking before scenario design (Gates 7–8)
 
-- **Q-06** User must fill in `ORCL_User_Thesis_and_Questions.docx`: why Oracle, holding
-  period, price narrative, invalidation triggers, instrument (stock/calls/spread), max
-  downside, and the four earnings dates for price targets.
+- **Q-06** ~~User must fill in `ORCL_User_Thesis_and_Questions.docx`.~~ **Resolved
+  2026-07-21:** thesis captured via clarifying questions and written into the doc.
+  Summary — interested on OCI/cloud-infrastructure growth, the multi-cloud database
+  moat, and a valuation/mean-reversion setup (fair value seen as significantly above
+  current price); 6–18 month holding period; instrument is long calls (max downside =
+  full premium); year-end price narrative is multiple expansion to $150, expected
+  within 2–3 quarters if not by EOY 2026; invalidation triggers are balance-sheet/
+  leverage stress, an AI capex bust, and margin compression from the depreciation
+  buildout. Earnings dates aligned to Q-07's canonical set (FY27 Q1 2026-09-10
+  management-scheduled; Q2/Q3/Q4 estimates). Gate 8 (scenario approval) unblocked.
 - **Q-07** Confirm the four valuation dates. Framework assumes FY27 Q1 release
   2026-09-10 (stated), then est. Dec 2026, Mar 2027, Jun 2027. Only the first is
   management-scheduled; the rest are estimates.

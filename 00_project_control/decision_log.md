@@ -133,3 +133,20 @@ Gate 5B's full eight-quarter extraction lives in new files
 superset script that reuses the pilot's FY2026 Q1/Q4/annual entries verbatim
 (no re-transcription, no value drift) and adds FY2025 Q1-Q4 + FY2026 Q2-Q3. The
 full file is the one to use for Gate 6 reconciliation and Gate 7+ forecasting.
+
+## D-018 · 2026-07-21 · User thesis captured (Q-06)
+`01_Research_Outputs/ORCL_User_Thesis_and_Questions.docx` was filled in via
+clarifying questions rather than left for the user to draft freeform, since Gate 8
+(scenario approval) needs it and the user asked to be asked. Captured: interest
+driven by OCI/cloud-infrastructure growth, the multi-cloud database moat (Autonomous
+Database, Fusion/NetSuite stickiness), and a valuation/mean-reversion view (fair
+value seen as significantly above the current price); 6–18 month holding period;
+instrument is long calls, max acceptable downside is full premium; year-end price
+narrative is multiple expansion to $150, expected within 2–3 quarters if not by EOY
+2026; invalidation triggers are balance-sheet/leverage stress, an AI capex bust, and
+margin compression from the depreciation buildout outpacing revenue. The four
+earnings dates use Q-07's canonical set (FY27 Q1 2026-09-10, management-scheduled;
+Q2/Q3/Q4 are estimates per historical release-timing patterns, to be confirmed
+against Oracle's IR calendar closer to each date). Q-06 closed; Gate 8 no longer
+blocked on the thesis doc (Q-11 and the remaining Gate 6 blockers are unrelated and
+still open).

@@ -94,12 +94,13 @@ under independent re-verification without needing correction.
 ## 8. Remaining blockers (updated 2026-07-21)
 
 D-014 EBITDA sign-off — **ratified 2026-07-21**, user approved as recommended,
-no adjustments (see decision_log.md and EBITDA_DEFINITION_MEMO.md §6). Still
-open: transcripts (Q-04) and analyst-day deck (Q-05) still missing;
-preferred-stock conversion terms (Q-11); user thesis template blank (Q-06,
-now in progress via clarifying questions) — this specifically blocks Gate 8,
-not Gate 7; SRC-016 capture defect (cosmetic, non-blocking); the four
-documented blocked checks (§4).
+no adjustments (see decision_log.md and EBITDA_DEFINITION_MEMO.md §6). User
+thesis doc (Q-06) — **resolved 2026-07-21** via clarifying questions; see
+D-018 and `01_Research_Outputs/ORCL_User_Thesis_and_Questions.docx`; Gate 8 no
+longer blocked on this. Still open: transcripts (Q-04) and analyst-day deck
+(Q-05) still missing; preferred-stock conversion terms (Q-11); SRC-016
+capture defect (cosmetic, non-blocking); the four documented blocked checks
+(§4).
 
 ## 9. Exact next prompt (Gate 7)
 
@@ -113,7 +114,8 @@ documented blocked checks (§4).
 > assumption-based, and design the explicit driver set for the FY2027 Q1 – FY2028
 > Q4 forecast (revenue streams, margin structure, capacity/capex mechanics,
 > financing and dilution mechanics) per the project's forward comparable-company
-> valuation objective. Do not begin scenario approval (Gate 8, requires user
-> sign-off + filled thesis doc — Q-06 is still blocking), comps methodology
-> (Gate 9), or any model build. Update project-control files, commit, and push on
-> the designated branch.
+> valuation objective. Do not begin scenario approval (Gate 8, requires explicit
+> user sign-off on the scenarios themselves — the thesis doc, Q-06, was resolved
+> 2026-07-21 per D-018 and no longer blocks it), comps methodology (Gate 9), or
+> any model build. Update project-control files, commit, and push on the
+> designated branch.
