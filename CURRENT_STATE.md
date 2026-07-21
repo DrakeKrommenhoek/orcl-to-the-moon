@@ -1,6 +1,6 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-21 (Gate 9 comps methodology session)
+Last updated: 2026-07-21 (Gate 10 minimal model build session)
 Branch: `claude/oracle-historical-extraction-handoff-7dn6cr` (remote =
 DrakeKrommenhoek/orcl-to-the-moon). Rebuilt 2026-07-21 on top of
 `claude/oracle-historical-extraction-pilot-r6o3ov`, which carries the actual
@@ -10,8 +10,8 @@ that actually held the completed work.
 
 ## Current phase
 
-**Gate 9 (comps methodology) COMPLETE.** Gates 1-8 complete (see below).
-**Next: Gate 10 (minimal model build).**
+**Gate 10 (minimal model build) COMPLETE.** Gates 1-9 complete (see below).
+**Next: Gate 11 (model checks).**
 
 ## Completed work
 
@@ -75,6 +75,23 @@ that actually held the completed work.
   multiple assignment needs live peer market data, still blocked by Q-08/C-09
   (FactSet unauthenticated, no user-supplied terminal data) — flagged, not
   fabricated.
+- **Gate 10 (this session): minimal model build.** See `GATE_10_REVIEW.md` and
+  **D-022** in `decision_log.md`. Built
+  `12_Model/development/ORCL_8Q_Model_v0.1_Gate10.xlsx` — six tabs (Control
+  Panel, Historical Actuals, Scenario Assumptions, Revenue Forecast, Margin &
+  EBITDA, Checks). One scenario switch (Control Panel dropdown) drives the
+  D-020 ratified ranges through the whole workbook via a Selected-scenario
+  column. Revenue forecast is scenario-switched for OCI/applications growth;
+  the other four streams are held at trailing FY26 actual growth pending a
+  ratified range for them. EBITDA follows the ratified D-014 definition.
+  **Environment note:** LibreOffice's headless recalculation is broken in
+  this sandbox (confirmed via isolated tests unrelated to this workbook's
+  content) — verified instead via a zero-count check for unquoted cross-sheet
+  references and an independent Python replica of the Base-scenario formula
+  chain, which lands the bottom-up build at FY27 $90.5B / FY28 $129.1B,
+  inside the Framework's own base-case ranges without being forced to match.
+  Not built (Gate 12 scope): debt/lease/ATM mechanics, depreciation-by-
+  vintage, diluted shares, valuation output.
 
 ## Work in progress
 
@@ -96,17 +113,26 @@ None mid-flight. Clean stopping point.
    reasons, non-blocking): BS_070 non-current deferred-revenue split; CF_040
    acquisitions caption mismatch; CAP_020/commercial-paper Q4 FY26 split;
    FY2025 quarterly debt roll-forward.
-8. Pre-Gate-10 action items (not blocking Gate 8/9): four targeted FY26 10-K
-   footnote re-reads (useful lives, capitalized interest, BYOH treatment,
-   nonoperating investments) — see driver-doc §7.
+8. Pre-Gate-12 action items: four targeted FY26 10-K footnote re-reads
+   (useful lives, capitalized interest, BYOH treatment, nonoperating
+   investments) — see driver-doc §7.
+9. GAAP operating margin has no ratified scenario range (D-020 covers GAAP
+   gross margin and non-GAAP operating margin, not GAAP operating margin) —
+   held flat at the FY26 actual in the Gate 10 model; Gate 12 should either
+   derive it from the historical GAAP/non-GAAP opex bridge or get it ratified.
+10. LibreOffice headless recalculation does not work in this sandbox (hangs
+    indefinitely even on a trivial one-formula test file) — future sessions
+    building on the model should verify formulas by opening the file in real
+    Excel/Sheets, or retry `scripts/recalc.py` in case a future environment
+    doesn't have this limitation.
 
 ## Next recommended action
 
-Run Gate 10 (minimal model build) per `GATE_9_REVIEW.md` §4: build historical
-actuals, one scenario switch (bear/base/bull per D-020), driver mechanics per
-Gate 7, and a checks tab — a *minimal* build, not the full 12-tab structure
-(Gate 12). Multiple assignment and per-share output stay deferred to Gate 13
-pending Q-08/C-09.
+Run Gate 11 (model checks) per `GATE_10_REVIEW.md` §4: get real formula
+recalculation confirmed (ideally in an environment where LibreOffice works,
+or via the user opening the file), expand the Checks tab toward the full
+CHECK_ family once Gate 12 adds balance-sheet/cash-flow schedules, and close
+the GAAP-operating-margin gap noted above.
 
 ## Restart note
 

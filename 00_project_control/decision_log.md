@@ -224,3 +224,24 @@ only, since real multiple assignment needs live peer market data, which
 remains blocked (C-09/Q-08: FactSet connector unauthenticated, no user-
 supplied terminal data). Q-11 (preferred treatment) flagged as a live
 dependency for the P/NTM EPS cross-check, not resolved here. Gate 9 closed.
+
+## D-022 · 2026-07-21 · Gate 10 minimal model build
+Built `12_Model/development/ORCL_8Q_Model_v0.1_Gate10.xlsx`: Control Panel
+(scenario + valuation-date switches), Historical Actuals (Gate 6 dataset),
+Scenario Assumptions (full D-020 table with a Selected-scenario midpoint
+column), Revenue Forecast (six streams, FY27 Q1-FY28 Q4, OCI/applications
+growth scenario-switched per D-020, the other four streams held at trailing
+FY26 actual growth pending a ratified range for them), Margin & EBITDA
+(top-down per Gate 7 §5, EBITDA per the ratified D-014 definition), and
+Checks (stream-additivity and quarter-to-FY ties, historical and forecast).
+**Environment note:** LibreOffice's headless recalculation is broken in this
+sandbox (confirmed via isolated tests — even a trivial one-formula workbook
+hangs indefinitely on the same step, independent of this workbook's content).
+Verified instead by (a) a zero-count programmatic check for unquoted
+multi-word cross-sheet references, and (b) an independent Python replica of
+the Base-scenario formula chain, which lands the bottom-up revenue build at
+FY27 $90.5B / FY28 $129.1B — inside the Framework's own top-down base-case
+ranges without being forced to match them. Full detail: `GATE_10_REVIEW.md`.
+Not built (Gate 12 scope): debt/lease/ATM mechanics, depreciation-by-vintage,
+diluted shares, valuation output. One documented gap: GAAP operating margin
+has no ratified scenario range, held flat at the FY26 actual pending Gate 12.
