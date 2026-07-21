@@ -45,6 +45,10 @@ Conflicts between existing sources live in `source_conflicts.md`, not here.
   Note: a FactSet MCP connector exists in this workspace but is not yet authenticated —
   if the user authorizes it, it may satisfy this need.
 
+**Gate 8 (scenario approval) complete 2026-07-21 → D-020.** The Framework §10
+bear/base/bull operating ranges were presented to the user and ratified as
+proposed, no adjustments — see `decision_log.md` D-020 and `GATE_8_REVIEW.md`.
+
 ## C. Methodology decisions to make (Gates 4, 9)
 
 - **Q-09** ~~Adopt the Framework's six-stream revenue architecture as the canonical

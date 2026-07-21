@@ -1,6 +1,6 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-21 (Gate 7 forecast-driver design session)
+Last updated: 2026-07-21 (Gate 8 scenario approval session)
 Branch: `claude/oracle-historical-extraction-handoff-7dn6cr` (remote =
 DrakeKrommenhoek/orcl-to-the-moon). Rebuilt 2026-07-21 on top of
 `claude/oracle-historical-extraction-pilot-r6o3ov`, which carries the actual
@@ -10,9 +10,8 @@ that actually held the completed work.
 
 ## Current phase
 
-**Gate 7 (forecast-driver design) COMPLETE.** Gates 1-6 complete (see below).
-**Next: Gate 8 (scenario approval) — requires explicit user sign-off on
-scenario numeric ranges.**
+**Gate 8 (scenario approval) COMPLETE.** Gates 1-7 complete (see below).
+**Next: Gate 9 (comps methodology).**
 
 ## Completed work
 
@@ -54,6 +53,16 @@ scenario numeric ranges.**
     provisional-pending-sign-off pattern D-014 was in; does not block Gate 8.
   - No new field IDs introduced — forecast quarters populate the existing
     field set under `historical_or_forecast = forecast`.
+- **Gate 8 (this session): scenario approval.** See `GATE_8_REVIEW.md` and
+  **D-020** in `decision_log.md`. Presented the Framework §9/§10 bear/base/bull
+  operating-scenario definitions and full numeric-range table (FY27/FY28,
+  twelve driver rows) to the user against the ratified thesis (D-018). **User
+  approved as proposed, no adjustments**, including confirming the Bear case's
+  severity adequately represents their leverage-stress/AI-capex-bust/margin-
+  compression invalidation triggers. D-020 is now the single source of truth
+  for the ratified ranges — Gate 10 build reads from there, not the Framework
+  docx. The multiple/valuation assumption that turns an operating case into a
+  per-share price is explicitly deferred to Gate 9/13, not resolved here.
 
 ## Work in progress
 
@@ -81,10 +90,11 @@ None mid-flight. Clean stopping point.
 
 ## Next recommended action
 
-Run Gate 8 (scenario approval) using the exact prompt in
-`00_project_control/GATE_7_REVIEW.md` §6. Requires presenting the Framework's
-§10 bear/base/bull numeric ranges to the user for explicit review against
-their thesis doc, and logging the ratified (or adjusted) ranges as a decision.
+Run Gate 9 (comps methodology) using the exact prompt in
+`00_project_control/GATE_8_REVIEW.md` §4. Needs to resolve NTM-window
+alignment (Q-12), peer weighting (Q-14), the primary valuation methodology/
+multiple framework (Framework §7-8), and re-source the comp table's market
+data with explicit as-of dates (C-09).
 
 ## Restart note
 

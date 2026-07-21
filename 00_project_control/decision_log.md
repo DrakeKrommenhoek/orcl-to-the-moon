@@ -163,3 +163,35 @@ duration buckets (RPO_020/050), and the DEBT_070 lease-commencement window
 GATE7_FORECAST_DRIVER_DESIGN.md` §4. Provisional in the same pattern as D-014
 before its ratification — does not block Gate 8, should be confirmed before
 Gate 10 implements it.
+
+## D-020 · 2026-07-21 · Scenario ratification (Gate 8)
+User reviewed the Framework §9/§10 bear/base/bull operating-scenario
+definitions and numeric ranges (reproduced in `GATE_7_REVIEW.md`'s Gate 8
+handoff and presented in full in this session) and **approved them as
+proposed, no adjustments**, including confirming the Bear case's severity
+(OCI gross margin <30%, more debt/ATM dilution at a depressed price, deeply
+negative FCF, worsening credit metrics) is an adequate representation of the
+user's stated invalidation triggers (balance-sheet/leverage stress, an AI
+capex bust, margin compression — D-018). Ratified scenario set:
+
+| Driver | Bear (FY27/FY28) | Base (FY27/FY28) | Bull (FY27/FY28) |
+|---|---|---|---|
+| OCI growth | 88-98% / 50-65% | 112-118% / 85-100% | 130-140% / 95-115% |
+| Applications growth | 7-9% / 6-8% | 10-12% / 10-12% | 14-16% / 13-15% |
+| Total revenue | $84-86B / $108-116B | $89.5-90.5B / $127-132B | $94-97B / $140-150B |
+| GAAP gross margin | 53-56% / 50-54% | 55-58% / 52-57% | 58-60% / 57-61% |
+| Non-GAAP op margin | 36-38.5% / 34-38% | 39.5-41.5% / 38.5-41.5% | 42-44% / 42-45% |
+| Gross capex | $92-100B / $85-105B | $90-95B / $100-115B | $95-105B / $115-135B |
+| FY27 net cash capex | $75-82B | $68-72B | $65-75B |
+| Depreciation | $13-15B / $23-29B | $15-17B / $28-34B | $17-20B / $32-40B |
+| Interest expense | $7.0-8.0B / $8.0-9.5B | $6.0-7.0B / $7.0-8.5B | $5.5-6.5B / $6.0-7.5B |
+| Ending gross debt | $155-165B / $175-195B | $145-153B / $155-175B | $138-148B / $140-160B |
+| Ending cash | $12-20B / $10-18B | $20-28B / $18-28B | $28-38B / $30-45B |
+| Diluted shares | 3.10-3.17B / 3.18-3.28B | 3.03-3.10B / 3.11-3.20B | 2.98-3.06B / 3.04-3.13B |
+
+These ranges are now the model's ratified operating-scenario inputs for Gate
+10 build (subject to the driver *mechanics* designed at Gate 7, and to D-019's
+capacity-index definition once separately confirmed). The multiple/valuation
+assumption that translates an operating case into the user's $150 price
+target is a distinct Gate 9/13 decision, not resolved by this ratification.
+Gate 8 closed.
