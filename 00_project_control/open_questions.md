@@ -44,14 +44,13 @@ Conflicts between existing sources live in `source_conflicts.md`, not here.
   recast?~~ **Resolved 2026-07-20 → D-009**: adopted as Layer 3 (REV_310–360) with the
   reported-to-analytical bridge in `HISTORICAL_DATA_ARCHITECTURE.md` §7.
 - **Q-10** ~~Fix an explicit EBITDA definition (treatment of SBC, leases, Ampere-type gains)
-  before any EV/EBITDA work.~~ **Recommendation issued 2026-07-20 (Gate 5A → D-014,
-  provisional):** primary EBITDA = GAAP operating income + CF-statement depreciation +
-  amortization of intangibles (SBC stays an expense; restructuring stays in; one-time
-  investment gains excluded by construction; EBITDA not EBITDAR). Full analysis with
-  FY26 numbers in `11_Analysis/historical/EBITDA_DEFINITION_MEMO.md`. PROF_160 is
-  populated under this definition, labeled provisional. **Remaining sliver: user
-  sign-off** (per Gate 4 review §10(f)); moves to decision_log permanently once
-  ratified.
+  before any EV/EBITDA work.~~ **Resolved 2026-07-21 → D-014 (ratified):** primary
+  EBITDA = GAAP operating income + CF-statement depreciation + amortization of
+  intangibles (SBC stays an expense; restructuring stays in; one-time investment
+  gains excluded by construction; EBITDA not EBITDAR). User signed off on the
+  recommendation as proposed, no adjustments. Full analysis with FY26 numbers in
+  `11_Analysis/historical/EBITDA_DEFINITION_MEMO.md`. PROF_160 relabeled ratified
+  across all periods.
 - **Q-11** Preferred-security treatment: debt-like vs. as-converted (Framework §15 rules
   out mixing both). Decide once terms are verified from the 8-A/prospectus.
 - **Q-12** NTM window convention for Oracle vs. peers with different fiscal year ends (C-10).

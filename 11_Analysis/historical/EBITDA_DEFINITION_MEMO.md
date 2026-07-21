@@ -1,6 +1,6 @@
 # EBITDA Definition Memo (Q-10)
 
-Gate: 5A pilot · Date: 2026-07-20 · Status: **recommended — pending user sign-off (Gate 8 family)**
+Gate: 5A pilot · Date: 2026-07-20 · Ratified: 2026-07-21 · Status: **ratified (D-014)**
 All figures below are FY2026 primary-source values extracted in the Gate 5A pilot
 (sources: SRC-006, SRC-008, SRC-013, SRC-016, SRC-024; see pilot provenance file).
 
@@ -78,7 +78,6 @@ FY26 spread between #1 and #3 is $6.6B (~22%).
 
 ## 6. Status
 
-Logged as **D-014 (provisional)**. PROF_160 is populated in the pilot under
-definition 1 and labeled `calculated / provisional pending user sign-off`. Q-10 moves
-to "recommendation issued — awaiting user ratification"; per Gate 4 review §10(f), the
-user approves, the analyst proposes.
+**Ratified 2026-07-21 (D-014).** User approved definition 1 as proposed, no
+adjustments. PROF_160 across all 8 historical quarters and both FY annuals is
+relabeled `calculated / ratified 2026-07-21 per user sign-off`. Q-10 is closed.

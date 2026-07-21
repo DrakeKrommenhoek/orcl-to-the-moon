@@ -81,7 +81,7 @@ documented bridge (they tie exactly). Field IDs remain stable; no extracted valu
 ever redefined. Dictionary/mapping updated to 137 rows; template regeneration deferred
 to Gate 5B start (original Gate 4 template preserved unchanged).
 
-## D-014 · 2026-07-20 · EBITDA definition (provisional — awaiting user ratification, Q-10)
+## D-014 · 2026-07-20 (ratified 2026-07-21) · EBITDA definition (Q-10)
 Primary historical EBITDA (PROF_160) = GAAP operating income (PROF_010) + cash-flow-
 statement depreciation (PROF_140) + amortization of intangibles (CF basis). SBC is NOT
 added back; restructuring/acquisition costs stay in (a separate "adjusted EBITDA"
@@ -91,7 +91,9 @@ gains (Ampere, Bloom) are excluded by construction because they sit below operat
 income. Cross-check series: non-GAAP operating income + depreciation. FY26 values:
 primary 29,900; NI-up variant 33,447; non-GAAP variant 36,549 — materially different,
 never interchangeable. Full memo: 11_Analysis/historical/EBITDA_DEFINITION_MEMO.md.
-Provisional until the user signs off; PROF_160 values are labeled accordingly.
+**User signed off 2026-07-21 on definition 1 as recommended, no adjustments.**
+PROF_160 values across all quarters/annuals relabeled `ratified 2026-07-21 per user
+sign-off`. Q-10 closed.
 
 ## D-015 · 2026-07-20 · Q4 value precedence and pilot provenance format
 (a) Where the Q4 release directly discloses a standalone Q4 statement line, the release

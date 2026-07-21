@@ -91,12 +91,15 @@ None. Gate 6 was a pure verification pass — no field IDs, formulas, or values
 were added or changed. This is itself a positive signal: the extraction held up
 under independent re-verification without needing correction.
 
-## 8. Remaining blockers (unchanged from Gate 5B)
+## 8. Remaining blockers (updated 2026-07-21)
 
-D-014 EBITDA sign-off; transcripts (Q-04) and analyst-day deck (Q-05) still
-missing; preferred-stock conversion terms (Q-11); user thesis template blank
-(Q-06) — this specifically blocks Gate 8, not Gate 7; SRC-016 capture defect
-(cosmetic, non-blocking); the four documented blocked checks (§4).
+D-014 EBITDA sign-off — **ratified 2026-07-21**, user approved as recommended,
+no adjustments (see decision_log.md and EBITDA_DEFINITION_MEMO.md §6). Still
+open: transcripts (Q-04) and analyst-day deck (Q-05) still missing;
+preferred-stock conversion terms (Q-11); user thesis template blank (Q-06,
+now in progress via clarifying questions) — this specifically blocks Gate 8,
+not Gate 7; SRC-016 capture defect (cosmetic, non-blocking); the four
+documented blocked checks (§4).
 
 ## 9. Exact next prompt (Gate 7)
 
