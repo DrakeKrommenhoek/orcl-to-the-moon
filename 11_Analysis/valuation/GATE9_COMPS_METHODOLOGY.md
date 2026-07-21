@@ -1,9 +1,9 @@
 # Gate 9 — Comparable-Company Methodology
 
-Gate: 9 · Date: 2026-07-21 · Status: recommendations issued, pending user
-confirmation (same "analyst proposes, user ratifies" pattern as D-014/D-019/
-D-020); one item (C-09 market-data re-sourcing) is genuinely blocked, not a
-design decision.
+Gate: 9 · Date: 2026-07-21 · Status: **ratified 2026-07-21 (D-021)** — user
+approved §1-3 as proposed, no adjustments. §4 (multiple framework) remains an
+unadopted Gate 13 candidate; §5 (C-09 market-data re-sourcing) remains
+genuinely blocked, not a design decision.
 
 Companions: `01_Research_Outputs/ORCL_Eight_Quarter_Model_Framework_2026-07-20.docx`
 §6-8 (source of the peer table, valuation-method comparison, and multiple

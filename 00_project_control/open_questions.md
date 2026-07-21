@@ -64,11 +64,18 @@ proposed, no adjustments — see `decision_log.md` D-020 and `GATE_8_REVIEW.md`.
   across all periods.
 - **Q-11** Preferred-security treatment: debt-like vs. as-converted (Framework §15 rules
   out mixing both). Decide once terms are verified from the 8-A/prospectus.
-- **Q-12** NTM window convention for Oracle vs. peers with different fiscal year ends (C-10).
+- **Q-12** ~~NTM window convention for Oracle vs. peers with different fiscal year
+  ends.~~ **Resolved 2026-07-21 → D-021 (Gate 9, ratified):** every company's NTM
+  window built on a calendar-quarter basis; peer fiscal-quarter data interpolated
+  onto calendar quarters rather than comparing "next four fiscal quarters" as each
+  company defines them. See `11_Analysis/valuation/GATE9_COMPS_METHODOLOGY.md` §3.
 - **Q-13** Lease treatment convention in EV and leverage (include lease liabilities in EV
   bridge only if peer multiples use the same convention).
-- **Q-14** Peer-set weighting: how much anchor weight to Amazon/Alphabet given the two AI
-  reports disagree (C-09); CoreWeave stays reference-only (both agree).
+- **Q-14** ~~Peer-set weighting: how much anchor weight to Amazon/Alphabet.~~
+  **Resolved 2026-07-21 → D-021 (Gate 9, ratified):** weighted down rather than
+  excluded — Microsoft ~50%, Amazon ~25%, Alphabet ~25% within the OCI peer
+  reference; CoreWeave confirmed reference-only. See `GATE9_COMPS_METHODOLOGY.md`
+  §2.
 - **Q-15** ~~Capacity-based OCI forecast requires a "capacity contribution index".~~
   **Recommendation issued 2026-07-21 (Gate 7 → D-019, provisional):** a relative,
   unitless index rebased to FY26 Q4 = 100, built from net PP&E growth attributable

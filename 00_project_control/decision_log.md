@@ -195,3 +195,32 @@ capacity-index definition once separately confirmed). The multiple/valuation
 assumption that translates an operating case into the user's $150 price
 target is a distinct Gate 9/13 decision, not resolved by this ratification.
 Gate 8 closed.
+
+## D-021 · 2026-07-21 · Comps methodology (Gate 9)
+User reviewed and approved as proposed, no adjustments, all three
+recommendations in `11_Analysis/valuation/GATE9_COMPS_METHODOLOGY.md`:
+(1) **Primary valuation method:** EV/NTM EBITDA with five mandatory controls
+(capex/revenue, EBITDA-less-capex, OCF-less-capex, lease-adjusted net
+leverage, incremental ROIC) — never reported without the controls alongside
+it. Cross-checks: P/NTM adjusted EPS, EV/NTM revenue (OCI-segment only),
+shadow SOTP, DCF.
+(2) **Peer set and weighting (Q-14 resolved):** OCI → Microsoft (~50%
+weight)/Amazon (~25%)/Alphabet (~25%) — the two AI research sources' Amazon/
+Alphabet disagreement is resolved by weighting down rather than excluding,
+since both sources agreed on inclusion and disagreed only on emphasis;
+Applications → SAP/Salesforce (even weight); Support/license → IBM/SAP;
+Hardware/services → IBM (thin proxy, flagged gap). CoreWeave confirmed
+reference-only per both sources. ServiceNow/Workday, Equinix/Digital Realty,
+Nvidia/AMD, pure-SaaS/mega-cap-tech/data-center-REIT medians: reference-only,
+never anchors.
+(3) **NTM-window alignment (Q-12 resolved):** every company's NTM window
+built on a calendar-quarter basis (peer fiscal-quarter data interpolated onto
+calendar quarters), not "next four fiscal quarters" as each company defines
+them — avoids comparing economically mismatched periods across Oracle's 5/31
+FYE and peers' 6/30/12/31/1/31 FYEs (C-10).
+Explicitly NOT adopted: the Framework §8 multiple ranges (EV/NTM EBITDA
+9-11x/12-14x/15-17x bear/base/bull) — carried forward as a Gate 13 candidate
+only, since real multiple assignment needs live peer market data, which
+remains blocked (C-09/Q-08: FactSet connector unauthenticated, no user-
+supplied terminal data). Q-11 (preferred treatment) flagged as a live
+dependency for the P/NTM EPS cross-check, not resolved here. Gate 9 closed.

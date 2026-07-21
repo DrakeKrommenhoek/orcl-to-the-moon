@@ -1,6 +1,6 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-21 (Gate 8 scenario approval session)
+Last updated: 2026-07-21 (Gate 9 comps methodology session)
 Branch: `claude/oracle-historical-extraction-handoff-7dn6cr` (remote =
 DrakeKrommenhoek/orcl-to-the-moon). Rebuilt 2026-07-21 on top of
 `claude/oracle-historical-extraction-pilot-r6o3ov`, which carries the actual
@@ -10,8 +10,8 @@ that actually held the completed work.
 
 ## Current phase
 
-**Gate 8 (scenario approval) COMPLETE.** Gates 1-7 complete (see below).
-**Next: Gate 9 (comps methodology).**
+**Gate 9 (comps methodology) COMPLETE.** Gates 1-8 complete (see below).
+**Next: Gate 10 (minimal model build).**
 
 ## Completed work
 
@@ -63,6 +63,18 @@ that actually held the completed work.
   for the ratified ranges — Gate 10 build reads from there, not the Framework
   docx. The multiple/valuation assumption that turns an operating case into a
   per-share price is explicitly deferred to Gate 9/13, not resolved here.
+- **Gate 9 (this session): comps methodology.** See `GATE_9_REVIEW.md` and
+  **D-021** in `decision_log.md`. Ratified: (1) primary valuation method =
+  EV/NTM EBITDA with five mandatory capital-adjusted controls; (2) peer set/
+  weighting (Q-14 resolved) — Microsoft ~50%/Amazon ~25%/Alphabet ~25% within
+  the OCI reference, resolving the two AI research sources' disagreement by
+  weighting rather than exclusion; CoreWeave confirmed reference-only; (3)
+  NTM-window alignment (Q-12 resolved) — calendar-quarter basis for every
+  company. **Not adopted:** the Framework's multiple ranges (9-11x/12-14x/
+  15-17x EV/EBITDA) — carried forward as a Gate 13 candidate only, since real
+  multiple assignment needs live peer market data, still blocked by Q-08/C-09
+  (FactSet unauthenticated, no user-supplied terminal data) — flagged, not
+  fabricated.
 
 ## Work in progress
 
@@ -76,8 +88,8 @@ None mid-flight. Clean stopping point.
    connector present but unauthenticated).
 4. Q-11: preferred-security treatment (debt-like vs. as-converted) needs the
    Certificate of Designations/prospectus — not yet obtained.
-5. Q-12/Q-13/Q-14: NTM-alignment convention, lease-in-EV convention, and peer
-   weighting are open Gate 9 methodology decisions.
+5. Q-13: lease-in-EV convention still open (Gate 9 resolved Q-12/Q-14 but not
+   Q-13 — depends on whether peer multiples used include lease liabilities).
 6. SRC-016 capture defect (clipped wide tables in the Q4 FY26 release PDF) -
    cosmetic; never blocked a value.
 7. Four blocked reconciliation checks, unchanged since Gate 5B (documented
@@ -90,11 +102,11 @@ None mid-flight. Clean stopping point.
 
 ## Next recommended action
 
-Run Gate 9 (comps methodology) using the exact prompt in
-`00_project_control/GATE_8_REVIEW.md` §4. Needs to resolve NTM-window
-alignment (Q-12), peer weighting (Q-14), the primary valuation methodology/
-multiple framework (Framework §7-8), and re-source the comp table's market
-data with explicit as-of dates (C-09).
+Run Gate 10 (minimal model build) per `GATE_9_REVIEW.md` §4: build historical
+actuals, one scenario switch (bear/base/bull per D-020), driver mechanics per
+Gate 7, and a checks tab — a *minimal* build, not the full 12-tab structure
+(Gate 12). Multiple assignment and per-share output stay deferred to Gate 13
+pending Q-08/C-09.
 
 ## Restart note
 
