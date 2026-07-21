@@ -65,9 +65,13 @@ Conflicts between existing sources live in `source_conflicts.md`, not here.
   bridge only if peer multiples use the same convention).
 - **Q-14** Peer-set weighting: how much anchor weight to Amazon/Alphabet given the two AI
   reports disagree (C-09); CoreWeave stays reference-only (both agree).
-- **Q-15** Capacity-based OCI forecast requires a "capacity contribution index" (Framework
-  §2) — define its units and reconciliation procedure to disclosed site additions and RPO
-  commencements.
+- **Q-15** ~~Capacity-based OCI forecast requires a "capacity contribution index".~~
+  **Recommendation issued 2026-07-21 (Gate 7 → D-019, provisional):** a relative,
+  unitless index rebased to FY26 Q4 = 100, built from net PP&E growth attributable
+  to the buildout, reconciled quarterly against disclosed site additions/RPO/lease-
+  commencement anchors. See `11_Analysis/forecast/GATE7_FORECAST_DRIVER_DESIGN.md`
+  §4. Provisional pending user sign-off (same pattern as D-014); does not block
+  Gate 8.
 
 ## D. Substantive modeling unknowns (inherited from Framework §16 — kept as the master list)
 
@@ -75,8 +79,17 @@ The Framework's 30 unresolved questions (customer-level RPO mix, contract terms,
 in-service dates, revenue per unit of capacity, useful lives, ATM execution pace,
 convertible EPS treatment, tax rate, capitalized interest, Oracle Health profitability,
 support durability, etc.) are adopted wholesale as the substantive research agenda. See
-`01_Research_Outputs/ORCL_Eight_Quarter_Model_Framework_2026-07-20.docx` §16. They will be
-triaged into answerable-from-filings vs. permanently-assumption-based during Gate 7.
+`01_Research_Outputs/ORCL_Eight_Quarter_Model_Framework_2026-07-20.docx` §16.
+**Triaged 2026-07-21 (Gate 7):** full item-by-item disposition in
+`11_Analysis/forecast/GATE7_FORECAST_DRIVER_DESIGN.md` §2. Summary: 8 are
+permanently assumption/scenario-input by design (capacity-unit economics, ATM
+pricing, future debt terms, customer-level RPO mix, etc.); 10 are partially
+answerable from documents already in the repo (a short list of FY26 10-K
+footnote re-reads before Gate 10 — useful lives, capitalized interest, BYOH
+treatment, nonoperating investments); 2 need a specific new document/connector
+already tracked (Q-11, Q-08); the rest are resolved or bounded by data already
+extracted (effective tax rate, support-revenue stability, aggregate prepayment/
+BYOH figures).
 
 ## E. Workspace / process
 

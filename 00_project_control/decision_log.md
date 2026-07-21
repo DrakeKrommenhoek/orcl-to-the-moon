@@ -150,3 +150,16 @@ Q2/Q3/Q4 are estimates per historical release-timing patterns, to be confirmed
 against Oracle's IR calendar closer to each date). Q-06 closed; Gate 8 no longer
 blocked on the thesis doc (Q-11 and the remaining Gate 6 blockers are unrelated and
 still open).
+
+## D-019 · 2026-07-21 · Capacity contribution index definition (provisional, Q-15)
+Recommended (Gate 7): `CapacityIndex_t = CapacityIndex_(t-1) + ΔNetPP&E growth
+attributable to the buildout`, rebased so FY2026 Q4 = 100. Deliberately a
+relative, unitless index — Oracle discloses no MW/GPU/equivalent capacity unit
+(architecture §19), so no absolute-unit index is constructible from filings.
+Reconciliation requirement: cross-check implied capacity growth each quarter
+against disclosed site/region additions (KPI_040), the RPO next-12-months and
+duration buckets (RPO_020/050), and the DEBT_070 lease-commencement window
+(FY2027-FY2029 per C-06). Full rationale: `11_Analysis/forecast/
+GATE7_FORECAST_DRIVER_DESIGN.md` §4. Provisional in the same pattern as D-014
+before its ratification — does not block Gate 8, should be confirmed before
+Gate 10 implements it.
