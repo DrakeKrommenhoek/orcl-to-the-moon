@@ -1,6 +1,6 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-21 (Gate 10 minimal model build session)
+Last updated: 2026-07-21 (Gate 11 model checks session)
 Branch: `claude/oracle-historical-extraction-handoff-7dn6cr` (remote =
 DrakeKrommenhoek/orcl-to-the-moon). Rebuilt 2026-07-21 on top of
 `claude/oracle-historical-extraction-pilot-r6o3ov`, which carries the actual
@@ -10,8 +10,8 @@ that actually held the completed work.
 
 ## Current phase
 
-**Gate 10 (minimal model build) COMPLETE.** Gates 1-9 complete (see below).
-**Next: Gate 11 (model checks).**
+**Gate 11 (model checks) COMPLETE.** Gates 1-10 complete (see below).
+**Next: Gate 12 (full model build).**
 
 ## Completed work
 
@@ -92,6 +92,17 @@ that actually held the completed work.
   inside the Framework's own base-case ranges without being forced to match.
   Not built (Gate 12 scope): debt/lease/ATM mechanics, depreciation-by-
   vintage, diluted shares, valuation output.
+- **Gate 11 (this session): model checks.** See `GATE_11_REVIEW.md` and
+  **D-023** in `decision_log.md`. Added CHECK_090 (GAAP/non-GAAP operating
+  income bridge) to `12_Model/development/ORCL_8Q_Model_v0.2_Gate11.xlsx`,
+  historical quarters only — re-derives non-GAAP operating income from the
+  individually filed reconciling items (SBC, amortization, acquisition-
+  related/restructuring) and compares against the as-extracted figure. A
+  genuine second-source check: ties within $1mm rounding across all 8
+  quarters. v0.1 archived to `12_Model/archived_versions/` before edits.
+  Re-attempted LibreOffice recalculation (290s budget) — still hangs,
+  confirming Gate 10's finding is persistent, not a one-off. Balance-sheet/
+  cash-flow checks correctly deferred to Gate 12 (schedules don't exist yet).
 
 ## Work in progress
 
@@ -121,18 +132,20 @@ None mid-flight. Clean stopping point.
    held flat at the FY26 actual in the Gate 10 model; Gate 12 should either
    derive it from the historical GAAP/non-GAAP opex bridge or get it ratified.
 10. LibreOffice headless recalculation does not work in this sandbox (hangs
-    indefinitely even on a trivial one-formula test file) — future sessions
-    building on the model should verify formulas by opening the file in real
-    Excel/Sheets, or retry `scripts/recalc.py` in case a future environment
-    doesn't have this limitation.
+    indefinitely even on a trivial one-formula test file, re-confirmed at
+    Gate 11 with a 290s budget) — future sessions building on the model
+    should verify formulas by opening the file in real Excel/Sheets, or retry
+    `scripts/recalc.py` in case a future environment doesn't have this
+    limitation.
 
 ## Next recommended action
 
-Run Gate 11 (model checks) per `GATE_10_REVIEW.md` §4: get real formula
-recalculation confirmed (ideally in an environment where LibreOffice works,
-or via the user opening the file), expand the Checks tab toward the full
-CHECK_ family once Gate 12 adds balance-sheet/cash-flow schedules, and close
-the GAAP-operating-margin gap noted above.
+Run Gate 12 (full model build) per `GATE_11_REVIEW.md` §5: add debt/lease
+roll-forward, depreciation-by-vintage (confirm D-019 first), ATM/dilution
+mechanics, diluted shares, and the balance-sheet/cash-flow schedules to
+`12_Model/development/ORCL_8Q_Model_v0.2_Gate11.xlsx`; then expand the Checks
+tab with CHECK_080 (debt roll-forward), CHECK_100 (cash tie), and a
+forecast-side GAAP/non-GAAP bridge; close the GAAP-operating-margin gap.
 
 ## Restart note
 

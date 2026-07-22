@@ -245,3 +245,20 @@ ranges without being forced to match them. Full detail: `GATE_10_REVIEW.md`.
 Not built (Gate 12 scope): debt/lease/ATM mechanics, depreciation-by-vintage,
 diluted shares, valuation output. One documented gap: GAAP operating margin
 has no ratified scenario range, held flat at the FY26 actual pending Gate 12.
+
+## D-023 · 2026-07-21 · Gate 11 model checks
+Added CHECK_090 (GAAP/non-GAAP operating income bridge) to
+`ORCL_8Q_Model_v0.2_Gate11.xlsx`, historical quarters only: re-derives
+`Non-GAAP operating income − GAAP operating income` from the individually
+filed reconciling items (OPEX_040 amortization, OPEX_070 SBC, combined
+acquisition-related/restructuring using OPEX_065's FY26-Q4 combined caption)
+and compares against the as-extracted PROF_030 — a genuine second-source
+check, not a tautology. Ties within $1mm rounding across all 8 historical
+quarters, verified independently in Python both before and after wiring the
+formulas into the workbook. Re-attempted LibreOffice headless recalculation
+with a 290s budget — still hangs, confirming Gate 10's finding is a
+persistent sandbox limitation, not a one-off. v0.1 archived unchanged to
+`12_Model/archived_versions/` before this session's edits, per CLAUDE.md's
+model-versioning rule. Balance-sheet/cash-flow ties correctly deferred to
+Gate 12, since those schedules don't exist yet. Full detail:
+`GATE_11_REVIEW.md`.
