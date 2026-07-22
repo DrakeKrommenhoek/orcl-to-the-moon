@@ -1,6 +1,6 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-21 (Gate 14 sensitivities session — illustrative multiple)
+Last updated: 2026-07-21 (Gate 15 investment interpretation session)
 Branch: `claude/oracle-historical-extraction-handoff-7dn6cr` (remote =
 DrakeKrommenhoek/orcl-to-the-moon). Rebuilt 2026-07-21 on top of
 `claude/oracle-historical-extraction-pilot-r6o3ov`, which carries the actual
@@ -10,13 +10,17 @@ that actually held the completed work.
 
 ## Current phase
 
-**Gate 14 (sensitivities) COMPLETE, on the illustrative multiple** — per
-explicit user instruction. Gate 13 (valuation) remains partially complete:
-NTM aggregation, the enterprise-to-equity bridge, and Net Income/EPS
-mechanics are built; real multiple assignment is still genuinely blocked on
-Q-08/C-09 (no authenticated market-data source). Gates 1-12 complete (see
-below). **Next: Gate 15 (investment interpretation), or resolve Q-08 first
-to redo Gates 13-14 with a real multiple.**
+**Gate 15 (investment interpretation) COMPLETE, on the illustrative
+multiple.** All fifteen CLAUDE.md process gates have now been touched — the
+mechanical pipeline (historical data → drivers → scenarios → comps
+methodology → full model → valuation → sensitivities → interpretation) is
+built end-to-end. Gate 13 (valuation) remains partially complete: NTM
+aggregation and the equity bridge are built; real multiple assignment is
+still genuinely blocked on Q-08/C-09. **Next: the user is running an
+external research prompt (Gemini/ChatGPT/Perplexity) to try to unblock
+Q-08/Q-11/Q-04/Q-05; once sourced data comes back, redo Gates 13-14 with
+real numbers and refresh the Gate 15 memo. Remaining work is data
+acquisition, not further design or construction.**
 
 ## Completed work
 
@@ -157,6 +161,20 @@ to redo Gates 13-14 with a real multiple.**
   unresolved, so all of this stays illustrative until a real multiple is
   sourced. Verified via an independent Python replica matching the actual
   formulas and confirming the bear<base<bull ordering.
+- **Gate 15 (this session): investment interpretation.** See
+  `GATE_15_REVIEW.md` and **D-027** in `decision_log.md`. Published
+  `13_Deliverables/GATE15_INVESTMENT_INTERPRETATION_MEMO.md`: checks the
+  ratified thesis (D-018) against the Gate 14 illustrative triad — the
+  user's $150 target sits between illustrative Base/Bull (a coherent
+  "multiple expansion" reading); long calls remain the right structural fit
+  given the user's own risk tolerance/holding period; the three invalidation
+  triggers map directly onto the ratified Bear case and D-021's controls.
+  Strike/expiration explicitly left undecided pending real option data.
+  Before the memo, issued `11_Analysis/valuation/
+  RESEARCH_PROMPT_FOR_EXTERNAL_AI.md` for the user to run through an
+  external AI research tool, targeting Q-08/C-09 (real multiple), Q-11
+  (preferred terms), and Q-04/Q-05 (transcripts/analyst day). All fifteen
+  CLAUDE.md gates have now been touched.
 
 ## Work in progress
 
@@ -209,13 +227,15 @@ None mid-flight. Clean stopping point.
 
 ## Next recommended action
 
-Two paths, either is reasonable: (a) run Gate 15 (investment interpretation)
-using the illustrative bear/base/bull range (~$96/$166/$244) as a stand-in,
-same illustrative-only caveat carried through; or (b) resolve Q-08 first —
-authenticate the FactSet MCP connector, or have the user supply current,
-as-of-dated peer market data for the ratified peer set (D-021) — then redo
-Gates 13-14 with a real multiple before Gate 15, so the interpretation memo
-starts from real numbers instead of illustrative ones.
+Wait for the user to run `11_Analysis/valuation/
+RESEARCH_PROMPT_FOR_EXTERNAL_AI.md` through an external AI research tool and
+return with sourced data. When it arrives: fill the Valuation (Gate 13)
+tab's blank multiple cells with real, cited figures; re-run Gate 14's
+Sensitivities tab with real Bear/Base/Bull multiples instead of the
+Framework's illustrative ones; refresh the Gate 15 memo's price triad and
+strike/expiration discussion with real option-market data. If the user
+decides on a calls position before that data arrives, the Gate 15 memo
+already states clearly that its numbers are illustrative, not sourced.
 
 ## Restart note
 

@@ -330,3 +330,25 @@ four dates (documented as a reasonable future refinement, not a gap in this
 gate's deliverable). Verified via an independent Python replica matching the
 actual formulas, both individually and via the monotonic bear<base<bull
 ordering as a sanity check. Full detail: `GATE_14_REVIEW.md`.
+
+## D-027 · 2026-07-21 · Gate 15 investment interpretation memo
+Published `13_Deliverables/GATE15_INVESTMENT_INTERPRETATION_MEMO.md`,
+checking the ratified user thesis (D-018: long calls, 6-18 month hold,
+full-premium downside tolerance, $150 target via multiple expansion) against
+the Gate 14 illustrative bear/base/bull triad (~$96/$166/$244). Findings:
+the $150 target sits between illustrative Base and Bull, a coherent reading
+of "multiple expansion," not a contradiction; long calls remain the right
+structural fit given the user's own risk tolerance and holding period (a
+call spread would cap upside the thesis doesn't ask to cap); the user's
+three invalidation triggers map directly onto the ratified Bear case's
+defining features and the D-021 controls — the project's risk framework and
+the user's personal one are the same thing. Strike/expiration explicitly
+left undecided — needs real current option prices/IV, not fabricated.
+Before this memo, issued a structured research prompt
+(`11_Analysis/valuation/RESEARCH_PROMPT_FOR_EXTERNAL_AI.md`) for the user to
+run through Gemini/ChatGPT/Perplexity, targeting Q-08/C-09 (real multiple),
+Q-11 (preferred terms), and Q-04/Q-05 (transcripts/analyst day) — framed as
+rank-6 research-tool output per the source hierarchy, usable only with a
+named source and as-of date. All fifteen CLAUDE.md process gates have now
+been touched; remaining work is data acquisition, not further design or
+construction. Full detail: `GATE_15_REVIEW.md`.
