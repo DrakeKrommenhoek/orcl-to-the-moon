@@ -352,3 +352,40 @@ rank-6 research-tool output per the source hierarchy, usable only with a
 named source and as-of date. All fifteen CLAUDE.md process gates have now
 been touched; remaining work is data acquisition, not further design or
 construction. Full detail: `GATE_15_REVIEW.md`.
+
+## D-028 · 2026-07-22 · Research prompt results processed; Q-11 substantively resolved
+User ran the Gate-15 research prompt through both Gemini Deep Research and
+ChatGPT; both outputs saved as new sources (SRC-025, SRC-026, rank 6 —
+research-tool output, cross-check only per the source hierarchy). Key
+findings, cross-corroborated between the two independently-run tools
+(precise numeric agreement on the preferred terms is a meaningful confidence
+signal even though neither citation was independently fetched by this
+session — SEC.gov returned 403 to a direct WebFetch attempt):
+- **Q-11 substantively resolved.** Series D mandatory convertible preferred:
+  minimum/maximum conversion rates 499.8126/624.7657 common shares per
+  preferred share, initial price ~$160.06, threshold appreciation price
+  ~$200.07, mandatory conversion date **~2029-01-15**. Since
+  every one of this project's four valuation dates falls in 2026-2027, well
+  before mandatory conversion, **debt-like treatment is structurally
+  correct for all four dates**, not a default pending resolution — this is
+  what Gates 12-14 already did, now confirmed rather than assumed.
+- **Q-08 remains open but partially informed.** Peer EV/NTM EBITDA multiples
+  disagree materially between the two tools (C-12) — not usable as "the"
+  real multiple. Oracle's own current market-implied EV/NTM EBITDA (13.76x,
+  Gemini) is a single-entity ratio not exposed to the same peer-methodology
+  mismatch, and lands almost exactly on the illustrative Base case's 13.0x
+  used since Gate 9 — a real-world cross-check, not a full resolution of
+  Q-08, added to the Valuation (Gate 13) tab as a separate labeled line.
+- **Q-04/Q-05 partially informed**, not fully resolved: substantive
+  transcript-backed commentary now available (97.5% GPU utilization, BYOH
+  contract mechanics, steady-state ROIC "high 20s", partner-funded capacity,
+  32% OCI gross margin on delivered capacity) but not independently verified
+  against the actual transcripts (still not obtained, Q-04). FY2030 OCI
+  target disagrees between tools ($100-120B vs. $166B, C-13) — unresolved,
+  not used in the model.
+- Current ORCL price/market cap (~$126, ~$360-366B), FY27 revenue guidance
+  (~$90B) and non-GAAP EPS guidance ($8.05), and FY2030 analyst-day targets
+  ($225B revenue, $21.00 EPS) all cross-corroborate cleanly between the two
+  tools and against figures already in the repo.
+Full detail and the resulting model/memo updates: see the Gate 13/15 model
+and memo updates made this session, and `source_conflicts.md` C-12/C-13.

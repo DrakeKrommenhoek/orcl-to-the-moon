@@ -62,8 +62,19 @@ proposed, no adjustments — see `decision_log.md` D-020 and `GATE_8_REVIEW.md`.
   recommendation as proposed, no adjustments. Full analysis with FY26 numbers in
   `11_Analysis/historical/EBITDA_DEFINITION_MEMO.md`. PROF_160 relabeled ratified
   across all periods.
-- **Q-11** Preferred-security treatment: debt-like vs. as-converted (Framework §15 rules
-  out mixing both). Decide once terms are verified from the 8-A/prospectus.
+- **Q-11** ~~Preferred-security treatment: debt-like vs. as-converted.~~ **Substantively
+  resolved 2026-07-22 → D-028** (rank-6 sourced, cross-corroborated by two
+  independent research tools, not yet independently fetched from the primary
+  424B5/FWP): mandatory conversion is not until ~2029-01-15, holders convert
+  early only at their own option, and every one of this project's four
+  valuation dates (2026-09 through 2027-06) falls well before that date — so
+  **debt-like treatment (subtract preferred value, exclude conversion shares,
+  include preferred dividends in common income) is the structurally correct
+  choice for all four valuation checkpoints**, not merely a default pending
+  resolution. This is exactly what the model already did (Gates 12-14). The
+  "as-converted" question only becomes live for any valuation date at or
+  after Jan 2029, which is outside this project's scope. See `decision_log.md`
+  D-028 and `source_conflicts.md`'s confirmed-consistencies note.
 - **Q-12** ~~NTM window convention for Oracle vs. peers with different fiscal year
   ends.~~ **Resolved 2026-07-21 → D-021 (Gate 9, ratified):** every company's NTM
   window built on a calendar-quarter basis; peer fiscal-quarter data interpolated

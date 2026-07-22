@@ -137,5 +137,42 @@ Naming: "Research Pack" = `01_Research_Outputs/ORCL_Public_Markets_Research_Pack
 - Research Pack §2: Q1 FY27 non-GAAP EPS guide "$1.72–$1.76 vs $1.85 consensus" and FY27 EPS $8.05; Framework repeats $8.05 and $1.72–$1.76. The $1.85 consensus figure is unattributed and unverifiable from repo holdings.
 - Treatment: classify $8.05 and $1.72–$1.76 as management guidance pending transcript/release verification; classify $1.85 as unverified consensus.
 
+## C-12 — Peer EV/NTM EBITDA multiples disagree materially between Gemini and ChatGPT (2026-07-22)
+- Both run by the user via `RESEARCH_PROMPT_FOR_EXTERNAL_AI.md` (Gate 15), same day, same peer set.
+- ChatGPT (MarketScreener, FY2027 fiscal-year proxy): MSFT 12.09x, AMZN 9.99x, GOOGL 14.43x, SAP 10.05x, CRM 8.54x, IBM 11.54x.
+- Gemini (provider not fully specified per-row, "Rolling 4-Qtr Calendar" NTM claimed): MSFT 15.71x, AMZN 16.27x, GOOGL 15.80x, SAP 15.40x, CRM 10.01x, IBM 14.72x.
+- Gemini's multiples run ~25-60% higher than ChatGPT's across every single peer, which is too systematic to be random noise — likely a different NTM EBITDA definition/source, a different EV convention (e.g., Gemini may be including something ChatGPT excludes, or vice versa), or an error in one tool's arithmetic. Neither report shows its EBITDA calculation, so the gap can't be reconciled from repo holdings.
+- Treatment: per D-021, this does not resolve Q-08/C-09. Neither multiple set is treated as "the" real peer multiple. The one point of usable signal is **Oracle's own current market-implied EV/NTM EBITDA**, computed by Gemini as 13.76x from Oracle's own current EV and its own NTM EBITDA consensus — a single-entity ratio, not a cross-peer comparison, so it isn't exposed to the same peer-to-peer methodology mismatch. Used as a market cross-check on the Valuation (Gate 13) tab, clearly labeled rank-6 and distinct from both the illustrative Framework multiple and a genuine sourced peer multiple.
+- Resolution requires either a named, single, verifiable data provider queried directly (e.g., an authenticated FactSet session) or the user manually pulling each peer's own NTM EBITDA from a named terminal with a stated calculation methodology.
+
+## C-13 — Oracle's FY2030 OCI revenue target: $100-120B vs. $166B
+- Both AI reports agree on the FY2030 total-revenue ($225B) and non-GAAP EPS ($21.00) analyst-day targets (cross-checked, consistent).
+- They disagree sharply on the FY2030 **OCI-specific** revenue target: Gemini reports "$100.0B-$120.0B" attributed to the Analyst Meeting presentation/RPO discussion; ChatGPT reports **$166 billion**, attributed to Reuters' contemporaneous coverage of the same October 16, 2025 meeting (an upward revision from an earlier-stated $144B path).
+- Both cite the same event but different downstream sources (Oracle's own slide deck vs. Reuters' reporting on it) — this could reflect Gemini reading an older/different slide row, a transcription error, or Reuters reporting a figure not on the slides verbatim (e.g., a verbal statement by an executive).
+- Treatment: unresolved. Neither figure is used in this model. If Q-05 (analyst-day materials) is ever obtained directly (the primary slide decks are publicly linked from Gemini's citation list — oracle.com/a/ocom/docs/corporate/financial-analyst-meeting-2025-*.pdf), pull the OCI FY30 number directly from the slide rather than trusting either research tool's transcription.
+
+## C-14 — Gemini's Black-Scholes option-premium estimates vs. ChatGPT's actual quoted prices disagree sharply for long-dated calls
+- ChatGPT reported **actual quoted market data** (bid/ask/last trade from Yahoo Finance) for the Dec 17, 2027 $150 call: last $61.00, bid $60.10, ask $63.75 (as of 2026-04-24), with a later delayed-quote snapshot of $70.08 (2026-07-22).
+- Gemini reported a **self-labeled Black-Scholes estimate** ("Pricing Model / Source: Black-Scholes / OptionCharts") for the same instrument (Dec 17, 2027 $150 strike): $18.30-$20.00.
+- These are not close — actual market price is roughly 3-4x Gemini's modeled estimate. For the nearer-dated Dec 18, 2026 $130 call, the two are much closer (Gemini's Black-Scholes range $18.20-$19.60 vs. ChatGPT's actual quote ~$20.15), so the estimate model is not uniformly bad — it appears to break down specifically for the longer-dated (2027) contracts, plausibly because a Black-Scholes estimate run without the real long-dated IV surface badly underprices LEAPS-style time value.
+- **Treatment: for any 2027-expiration option, use ChatGPT's actual quoted bid/ask (or, better, a live broker quote) — do not use Gemini's Black-Scholes estimate table for long-dated strikes.** For near-dated (2026) strikes the two sources are close enough to cross-validate each other.
+- This is exactly the kind of discrepancy this project's data-integrity rules exist to catch before it costs real money — an "estimated" premium presented without enough emphasis on the word "estimated" could otherwise be mistaken for a tradeable price.
+
 ## Confirmed consistencies (for the record)
 Cross-checks that PASSED between the two AI reports (still requiring primary verification at Gate 6): FY26 capex $55.7B (quarterly sum matches); FY26 FCF −$23.7B (sum matches); FY26 year-end cash $31.3B; FY26 interest expense ~$4.6B (quarterly sum ≈ $4.64B); FY26 total revenue $67.4B; FY26 exit RPO $638B; FY27 guidance ($90B revenue, ~$70B net cash capex, ~$40B financing incl. $20B ATM).
+
+**2026-07-22 (Gemini/ChatGPT deep-research reports, both rank 6, run via the
+Gate 15 research prompt):** strong independent agreement on: ORCL current
+share price (~$125.84-$127.05, ~1% spread, immaterial) and market cap
+(~$360-366B); Series D mandatory convertible preferred terms (minimum/
+maximum conversion rates 499.8126/624.7657 shares per preferred, initial
+price ~$160.06, threshold appreciation price ~$200.07, mandatory conversion
+date ~January 15, 2029) — precise numeric agreement between two
+independently-run tools is a meaningful confidence signal even though
+neither citation was independently fetched by this session (SEC.gov blocked
+direct WebFetch, 403); FY2027 revenue guidance ~$90B and FY2027 non-GAAP EPS
+guidance $8.05; FY2030 analyst-day targets of $225B total revenue and $21.00
+non-GAAP EPS. Both reports agree the public web does not expose a clean,
+named, terminal-style consensus for Oracle's non-GAAP EPS or OCI-growth/
+capex by quarter — company guidance remains the best available figure for
+those, consistent with Q-08's standing status.

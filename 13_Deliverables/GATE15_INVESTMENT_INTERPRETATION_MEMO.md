@@ -1,33 +1,51 @@
 # Investment Interpretation Memo — Oracle (ORCL)
 
-Gate: 15 · Date: 2026-07-21 · Status: **built on the illustrative multiple**
-(Q-08/C-09 unresolved — see caveat in every section). User-requested
-deadline: decide on a calls position by end of week (2026-07-21 week).
+Gate: 15 · Date: 2026-07-21, updated 2026-07-22 with research-prompt results
+· Status: price triad still illustrative (Q-08/C-09 unresolved), but now
+cross-checked against real market data; option-structure discussion now
+uses real (rank-6) quotes. User-requested deadline: decide on a calls
+position by end of week.
 
-Companions: `12_Model/development/ORCL_8Q_Model_v0.5_Gate14.xlsx`
-("Sensitivities (Gate 14)" tab), `01_Research_Outputs/
-ORCL_User_Thesis_and_Questions.docx` (D-018), `decision_log.md` D-018/D-020/
-D-021/D-025/D-026, `11_Analysis/valuation/RESEARCH_PROMPT_FOR_EXTERNAL_AI.md`
-(sent this session — its output should refine this memo before acting).
+Companions: `12_Model/development/ORCL_8Q_Model_v0.6_Gate15_data_update.xlsx`
+("Valuation (Gate 13)" §3b, "Sensitivities (Gate 14)" tabs),
+`01_Research_Outputs/ORCL_User_Thesis_and_Questions.docx` (D-018),
+`01_Research_Outputs/ORCL_Gemini_DeepResearch_Valuation_Data_2026-07-22.docx`
+and `ORCL_ChatGPT_DeepResearch_Valuation_Data_2026-07-22.md` (SRC-025/026),
+`decision_log.md` D-018/D-020/D-021/D-025/D-026/D-028,
+`source_conflicts.md` C-12/C-13/C-14.
 
-## 1. The one caveat that governs this whole memo
+## 1. What changed since the first draft of this memo
 
-**Every price figure below is illustrative, not sourced.** It uses the
-Framework's own explicitly-unadopted candidate EV/NTM EBITDA multiples
-(Bear 10x / Base 13x / Bull 16x), not a real, as-of-dated peer multiple —
-Q-08 (no authenticated consensus/market-data source) and C-09 (stale,
-single-sourced comp table) are still open. If the external research prompt
-sent this session comes back with real peer multiples and current market
-data before you decide, **redo the Gate 13/14 illustrative cells with real
-numbers first** — the mechanism is built and ready to receive them; only the
-inputs are placeholders. Treat everything quantitative in this memo as a
-structural rehearsal of the decision, not the decision's actual inputs.
+The user ran this session's research prompt through Gemini Deep Research
+and ChatGPT (2026-07-22). Both are **rank 6** (research-tool output) per
+CLAUDE.md's source hierarchy — cross-checks, never controlling, and neither
+was independently re-fetched from its cited primary source by this session
+(SEC.gov returned a 403 to a direct fetch attempt). Within that limit:
 
-## 2. What the model says (illustrative)
+- **Q-11 (preferred treatment) is now substantively resolved** (D-028): the
+  Series D preferred mandatorily converts ~2029-01-15, after all four of
+  this project's valuation dates — debt-like treatment, already used in the
+  model, is structurally correct, not a placeholder.
+- **Q-08 (real multiple) is still open**, but a useful cross-check exists:
+  the two tools' peer EV/NTM EBITDA multiples disagree by 25-60% across
+  every single peer (C-12) and are not usable. Oracle's own current
+  market-implied EV/NTM EBITDA — 13.76x, a single-entity ratio not exposed
+  to that peer-methodology mismatch — lands almost exactly on the
+  illustrative Base case's 13.0x this memo already used. That is a genuine
+  real-world signal that the illustrative Base assumption was reasonable,
+  not proof of a "real" multiple for the model's four future valuation
+  dates.
+- **A real, important discrepancy surfaced in the options data (C-14):**
+  Gemini's Black-Scholes-estimated premium for the Dec 2027 $150 call
+  ($18-20) is roughly a third of ChatGPT's actual quoted market price for
+  the same contract (~$61-70, bid/ask/last from Yahoo Finance). Trust the
+  actual quote, not the model estimate, for anything 2027-dated. The two
+  sources are much closer for 2026-dated strikes.
 
-At the first valuation checkpoint (FY27 Q1 earnings, expected 2026-09-10 —
-about 7 weeks from today), the model's NTM window (FY27 Q2 through FY28 Q1)
-implies:
+## 2. What the model says — illustrative price, now with a real cross-check
+
+At the first valuation checkpoint (FY27 Q1 earnings, expected 2026-09-10),
+the model's NTM window implies:
 
 | Scenario | Illustrative multiple | Illustrative price |
 |---|---|---|
@@ -35,119 +53,106 @@ implies:
 | Base | 13.0x EV/NTM EBITDA | ~$166/share |
 | Bull | 16.0x EV/NTM EBITDA | ~$244/share |
 
-Important framing: this is a **forward target as of the September 2026
-earnings date**, not an assessment of today's fair value — the NTM window
-starts the quarter *after* that release. Between now and then, the stock
-trades on anticipation of that release and on the broader AI-infrastructure
-narrative, not on this model's specific mechanics.
+**Real cross-check:** ORCL's current share price is ~$126 (both tools agree
+within ~1%, current as of 2026-07-22), against a current market-implied
+EV/NTM EBITDA of 13.76x (Gemini) — i.e., **the market today is already
+pricing Oracle close to this model's illustrative Base multiple**, on
+today's NTM window. The stock is not at $166 today because today's NTM
+EBITDA is smaller than the FY27-Q2-through-FY28-Q1 window this model's
+"Base" price uses — the $166 figure is a forward target for September 2026,
+not a claim that the stock is mispriced today. Your thesis is a bet that
+either OCI growth tracks toward Base/Bull and/or the multiple itself
+expands past 13x as execution derisks — both are still open questions the
+Sept 2026 print will start to answer, not something today's data confirms
+or refutes.
 
-Your stated thesis ($150 within 2-3 quarters if not by year-end 2026, via
-multiple expansion) sits **between the Base and Bull illustrative cases** —
-closer to Base, but requiring some combination of (a) OCI growth executing
-at or above the Base range (112-118% FY27), and/or (b) the market awarding
-something above a 13x multiple before fundamentals fully justify it (i.e.,
-real multiple expansion, which is exactly what your thesis names as the
-mechanism). This is a coherent, not contradictory, reading of your own
-thesis against the model — it does not require the Bull operating case to
-be right, just a multiple modestly above Base's illustrative 13x, or Base
-fundamentals with early credit for improving trajectory.
+## 3. Instrument: stock vs. long calls vs. call spread — now with real IV data
 
-## 3. Instrument: stock vs. long calls vs. call spread
+Your thesis document (D-018) settled the instrument question — long calls,
+full-premium downside tolerance. The new data adds a real consideration
+worth taking seriously before finalizing structure, not before finalizing
+instrument:
 
-Your thesis document (D-018) already settled the instrument question —
-**long calls**, with full-premium downside tolerance. This section checks
-that choice against what the model shows, rather than re-opening it.
+**Real volatility picture (rank 6, cross-checked between tools):**
+- ORCL overall implied volatility: ~62.6% (75th percentile — elevated vs.
+  its own history).
+- Term structure by expiration (ATM IV): Sept 2026 ~71%, Dec 2026 ~69.5-70%,
+  mid-late 2027 ~67-68%. IV is elevated everywhere but *highest* at the
+  nearest (Sept 2026 earnings) expiration and gradually declines further out
+  — a classic event-premium shape, not a flat surface.
+- The Sept 18, 2026 straddle implies a ~23% move around that earnings
+  release — a large expected swing, consistent with how binary this
+  print could be for your thesis (a bad OCI/margin/leverage print could
+  hit Bear-band levels fast; a strong one could re-rate quickly).
 
-**Why long calls fit this specific setup better than stock, given your own
-answers:**
-- Your downside tolerance is explicit and total (100% of premium) — a
-  position sizing choice, not a risk-management gap. Calls cap your dollar
-  loss at the premium regardless of how far Bear plays out, which stock
-  ownership does not.
-- Your 6-18 month window comfortably covers the first (Sept 2026) and
-  likely the second (est. Dec 2026) valuation checkpoints — enough time for
-  the "multiple expansion" thesis to play out across more than one earnings
-  print, which matters because a single quarter rarely re-rates a stock on
-  its own (Framework §12's milestone list is explicitly about a *pattern*
-  of confirmations, not one data point).
-- The bear/base/bull spread here (~$96 to ~$244, illustrative) is wide
-  enough that leverage via calls meaningfully amplifies the base-to-bull
-  move your thesis is betting on, which is the point of choosing options
-  over stock in the first place.
+**What this means for long calls specifically:** buying a call with an
+expiration close to Sept 2026 embeds paying near-peak IV, which decays
+sharply (IV crush) right after the print regardless of which direction the
+stock moves — a real cost your original instrument choice didn't have data
+on. This doesn't overturn "long calls" as your instrument, but it is a real
+reason to prefer:
+- **An expiration past the immediate Sept 2026 event** (Dec 2026 or later)
+  so you're not paying the single highest IV point on the term structure,
+  and/or
+- **Giving real weight to a call spread** for the specific leg that would
+  otherwise carry the most IV-crush exposure, which is exactly the argument
+  Gemini's analysis raised (buying $130 calls / selling $160 calls to
+  neutralize Vega risk while still capturing OCI-driven upside). This is
+  the first data-backed reason in this whole project to revisit your
+  original spread-vs-calls answer — not a reason to reverse it, but a
+  real trade-off you didn't have real numbers for when you first answered.
 
-**Why NOT a call spread, given your own answers:** a call spread caps your
-upside in exchange for cheaper premium — that trade only makes sense if you
-have a *view on the ceiling* (you expect Base or a mild Bull, not more). Your
-stated thesis is unambiguously bullish with an explicit multiple-expansion
-mechanism and no stated cap; if you genuinely believe more than modest
-upside is on the table, capping it via a spread works against your own
-stated view. A spread would be the better structure only if you want to
-reduce cost/breakeven at the expense of the tail — worth asking yourself
-directly, but it's a change from what you already told me, not a
-consequence of anything the model found.
+**Real premium reference points (Dec 18, 2026 expiration — cross-validated
+between both tools, trustworthy per C-14):**
 
-**Structural decision I cannot make for you (needs the research-prompt
-output, section 2):** strike and expiration. Two things determine this, and
-neither is in the model yet:
-1. **Expiration** should extend past your target catalyst window — likely
-   past the Sept 2026 print, and probably past the Dec 2026 one too, given
-   Framework §12's point that a single quarter rarely re-rates a stock.
-   Given your "2-3 quarters, or by EOY 2026" framing, an expiration in the
-   Dec 2026-Mar 2027 range is a reasonable starting point to discuss once
-   real premium/IV data is in hand, not a number I'm asserting here.
-2. **Strike** should be chosen against the actual current share price and
-   the actual current implied volatility surface, both of which are exactly
-   what the research prompt's Section 1-2 asks for. Choosing a strike
-   without that data would be fabricating a market input this project's
-   rules prohibit.
+| Strike | Estimated/quoted premium | Source |
+|---|---|---|
+| $130 (near current $126 price) | ~$18-20 | Gemini B-S estimate ($18.20-$19.60) and ChatGPT actual quote (~$20.15, bid $19.80/ask $20.55) agree closely |
+| $150 | ~$10-11 (Gemini estimate only; not independently quote-verified) | Gemini B-S estimate |
+| $160 | ~$7-8 (Gemini estimate only) | Gemini B-S estimate |
 
-## 4. Risk framing — your invalidation triggers against the model's own scenario logic
+**For any 2027-dated expiration, do not use Gemini's Black-Scholes table —
+it materially underprices those contracts relative to the real quote
+ChatGPT pulled (C-14).** Get a live quote from your own broker before
+sizing a 2027 position; treat everything above as directional, not
+executable, pricing.
 
-Your stated invalidation triggers (D-018) map directly onto the ratified
-Bear case (D-020) and the model's own controls (D-021), which is worth
-noting explicitly — the project's risk framework and your personal risk
-framework are already the same thing, not two things to reconcile:
+## 4. Risk framing — unchanged, still holds
 
-| Your trigger | Where it shows up in the model |
-|---|---|
-| Balance-sheet/leverage stress | Bear case: ending gross debt $155-165B (FY27) vs. Base $145-153B; Cash Flow & Returns tab's lease-adjusted net leverage control (D-021) — Base-case illustrative leverage runs ~5.4x FY27 improving to ~4.8x FY28; a Bear case would show this stalling or rising instead of improving |
-| AI capex bust | Bear case: OCI growth 88-98%/50-65% (FY27/28) vs. Base 112-118%/85-100% — a sharp OCI deceleration is literally the bear scenario's defining feature |
-| Margin compression | Bear case: GAAP gross margin 53-56%/50-54% vs. Base 55-58%/52-57%; the model's own EBITDA-less-capex and FCF controls (Cash Flow & Returns tab) would show deterioration first, before it shows up in a headline miss |
+Your invalidation triggers (leverage stress, AI capex bust, margin
+compression) map directly onto the ratified Bear case and the model's own
+D-021 controls — see the prior version of this memo's §4 table, still
+accurate. Nothing in the new data changes this mapping.
 
-Practically: if the Sept 2026 print shows OCI growth tracking toward the
-Bear band, gross margin compressing toward the Bear band, or debt/leverage
-guidance worsening rather than the Base case's expected "leverage peaks then
-declines" pattern — that is your exit signal, consistent with what you told
-me before any of this modeling happened, not a new conclusion the model
-forced on you.
+## 5. What's still genuinely open
 
-## 5. What would change this memo's conclusion
-
-- **A real multiple (Q-08/C-09).** If peer multiples come back meaningfully
-  below the Framework's illustrative 12-14x Base range, the whole price
-  triad shifts down and the calls decision should be revisited before, not
-  after, sizing a position.
-- **Current option prices/IV (research prompt §2).** High implied
-  volatility on ORCL calls right now would make the "long calls" structure
-  more expensive to express the same view — worth checking before
-  committing capital, since your thesis chose the instrument but the market
-  sets the price of expressing it.
-- **The mandatory convertible's actual terms (Q-11).** If conversion is
-  imminent or highly dilutive, the EPS/equity bridge this memo's price
-  triad rests on shifts — this is exactly why Gate 13 flagged Q-11 as an
-  unresolved dependency rather than silently picking a treatment and moving
-  on.
+- **The real EV/NTM EBITDA multiple (Q-08/C-09)** — the peer comps still
+  disagree too much between tools to trust (C-12); the 13.76x market
+  cross-check is useful but is today's multiple, not a sourced forecast
+  multiple for September 2026 or later.
+- **A verified, live options quote** — everything in §3 is rank 6 and, per
+  C-14, partly unreliable for 2027 expirations. Pull your own broker's
+  current quote for whatever strike/expiration you're actually considering
+  before placing a trade.
+- **The FY2030 OCI target disagreement (C-13, $100-120B vs. $166B)** —
+  doesn't affect the near-term decision but is worth resolving if you want
+  confidence in the multi-year thesis beyond this year's decision.
 
 ## 6. Bottom line
 
-Your instrument choice (long calls) is internally consistent with your own
-stated thesis, risk tolerance, and holding period — nothing in the model
-argues against it, and the illustrative bear/base/bull spread is wide enough
-to justify leverage over outright stock ownership. What remains before
-actually placing a trade is not a modeling question but a **data question**:
-real peer multiples, real current option prices, and the preferred's actual
-terms — all three requested in this session's research prompt. If you get
-that data back before end of week, bring it here and I'll fold it into Gate
-13/14 and re-run this memo's numbers properly; if you decide before that
-data arrives, do so knowing the price triad above is a structural rehearsal,
-not a sourced forecast.
+Long calls remain consistent with your thesis, risk tolerance, and holding
+period. The new data sharpens — but doesn't reverse — that choice:
+- The market's current ~13.76x multiple sitting near this model's Base case
+  is a real, if imperfect, signal that your thesis isn't fighting an already
+  euphoric price — there's room for the re-rating your thesis is betting on.
+- The options market is pricing real, elevated event risk into the Sept
+  2026 print (23% implied move, IV peaking right at that expiration) — this
+  is a legitimate reason to consider an expiration past that date, or a
+  spread structure for at least part of the position, rather than a reason
+  to abandon calls.
+- Get a live quote before sizing anything, especially at 2027 expirations,
+  where the research-tool data itself disagrees by 3-4x (C-14).
+
+If you decide before pulling a live quote, do so knowing this memo's price
+triad is still illustrative and its options pricing is directional-only,
+not executable.

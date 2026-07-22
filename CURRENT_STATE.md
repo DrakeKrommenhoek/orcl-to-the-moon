@@ -1,6 +1,6 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-21 (Gate 15 investment interpretation session)
+Last updated: 2026-07-22 (research-prompt results processed, D-028)
 Branch: `claude/oracle-historical-extraction-handoff-7dn6cr` (remote =
 DrakeKrommenhoek/orcl-to-the-moon). Rebuilt 2026-07-21 on top of
 `claude/oracle-historical-extraction-pilot-r6o3ov`, which carries the actual
@@ -10,17 +10,23 @@ that actually held the completed work.
 
 ## Current phase
 
-**Gate 15 (investment interpretation) COMPLETE, on the illustrative
-multiple.** All fifteen CLAUDE.md process gates have now been touched — the
-mechanical pipeline (historical data → drivers → scenarios → comps
-methodology → full model → valuation → sensitivities → interpretation) is
-built end-to-end. Gate 13 (valuation) remains partially complete: NTM
-aggregation and the equity bridge are built; real multiple assignment is
-still genuinely blocked on Q-08/C-09. **Next: the user is running an
-external research prompt (Gemini/ChatGPT/Perplexity) to try to unblock
-Q-08/Q-11/Q-04/Q-05; once sourced data comes back, redo Gates 13-14 with
-real numbers and refresh the Gate 15 memo. Remaining work is data
-acquisition, not further design or construction.**
+**All fifteen CLAUDE.md process gates have been touched; research-prompt
+results processed (D-028).** The user ran the Gate-15 research prompt
+through Gemini and ChatGPT (2026-07-22); results saved as SRC-025/026 (rank
+6) and cross-checked against each other. **Q-11 is now substantively
+resolved** — the preferred's mandatory conversion (~2029-01-15) falls after
+all four valuation dates, so debt-like treatment is structurally correct,
+not a placeholder. **Q-08 remains open**: the two tools' peer multiples
+disagree 25-60% (C-12, unusable); Oracle's own current market-implied
+EV/NTM EBITDA (13.76x) is a useful single-entity cross-check that happens to
+sit near the illustrative Base 13.0x, not a resolution. **A real options-data
+discrepancy surfaced (C-14)**: Gemini's Black-Scholes estimate for 2027
+LEAPS is ~1/3 of ChatGPT's actual quoted price for the same contract — use
+real quotes, not estimates, for anything 2027-dated. The Gate 15 memo and
+the Valuation tab were both updated with this data. **Next: the user
+decides on a calls position this week; if more data arrives (a live broker
+quote, FactSet authentication, or resolution of C-12/C-13/C-14), update
+accordingly — otherwise the mechanical pipeline is complete and stable.**
 
 ## Completed work
 
@@ -175,6 +181,24 @@ acquisition, not further design or construction.**
   external AI research tool, targeting Q-08/C-09 (real multiple), Q-11
   (preferred terms), and Q-04/Q-05 (transcripts/analyst day). All fifteen
   CLAUDE.md gates have now been touched.
+- **Research-prompt results processed (2026-07-22, D-028).** User ran the
+  prompt through Gemini and ChatGPT; saved as SRC-025/026 (rank 6) in
+  `01_Research_Outputs/`. **Q-11 substantively resolved** — mandatory
+  conversion (~2029-01-15) falls after all four valuation dates, so
+  debt-like treatment (already used) is structurally correct. Added
+  "Valuation (Gate 13)" §3b: Oracle's own current market-implied EV/NTM
+  EBITDA (13.76x, rank 6) as a single-entity cross-check, distinct from a
+  real peer multiple (still blocked, Q-08/C-09). Logged three new
+  conflicts: **C-12** (the two tools' peer EV/NTM EBITDA multiples disagree
+  25-60% across every peer — unusable), **C-13** (FY2030 OCI target
+  disagrees, $100-120B vs. $166B — unused), **C-14** (Gemini's Black-Scholes
+  2027 LEAPS estimate is ~1/3 of ChatGPT's actual quoted price for the same
+  contract — use real quotes, not estimates, for 2027 expirations). Updated
+  the Gate 15 memo with real current price (~$126), real IV term structure
+  (elevated ~62-71%, peaking at the Sept 2026 earnings expiration), and the
+  first data-backed reason to weigh a call spread against the user's
+  original long-calls answer (IV-crush risk right at the earnings print) —
+  presented as a real trade-off, not a reversal of the user's decision.
 
 ## Work in progress
 
