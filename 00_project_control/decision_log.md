@@ -262,3 +262,27 @@ persistent sandbox limitation, not a one-off. v0.1 archived unchanged to
 model-versioning rule. Balance-sheet/cash-flow ties correctly deferred to
 Gate 12, since those schedules don't exist yet. Full detail:
 `GATE_11_REVIEW.md`.
+
+## D-024 · 2026-07-21 · Gate 12 full model build
+Added four tabs to `ORCL_8Q_Model_v0.3_Gate12.xlsx` (v0.2 archived first):
+Capex & Depreciation (splits depreciation from amortization of intangibles
+for the first time — Margin & EBITDA's D&A line re-linked to this split
+build, replacing Gate 10's combined envelope); Debt, Leases & Cash (debt
+roll-forward from the FY26 Q4 actual to D-020's scenario-selected ending
+debt, net issuance as an explicit plug since no issuance schedule is
+disclosed; lease-commencement schedule spreading the disclosed $260B
+uncommenced-lease pool evenly across the FY2027-FY2029 window per the FY26
+10-K, C-06; ending cash on the same scenario-endpoint-plus-plug pattern);
+Equity & Shares (diluted shares pull D-020's scenario-selected figure
+directly, not re-derived from an assumed reflexive ATM price); Cash Flow &
+Returns (implied operating cash flow solved as a cash-identity plug, four of
+D-021's five mandated EV/NTM-EBITDA controls — capex/revenue, EBITDA-less-
+capex, OCF-less-capex/FCF, lease-adjusted net leverage; incremental ROIC
+explicitly not built, deferred to Gate 13). Checks tab gained CHECK_080
+(debt roll-forward) and CHECK_100 (cash tie), both labeled as true-by-
+construction identities rather than independent validations. Verified via a
+full-chain Python replica of the Base scenario (FY27 EBITDA ~$45.1B/FCF
+~-$26.7B/leverage ~5.4x; FY28 EBITDA ~$71.8B/FCF ~-$17.0B/leverage ~4.8x,
+improving as the Framework's own base case narrative expects) and a repeated
+zero-count check for unquoted cross-sheet references. Full detail:
+`GATE_12_REVIEW.md`.

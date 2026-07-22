@@ -1,6 +1,6 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-21 (Gate 11 model checks session)
+Last updated: 2026-07-21 (Gate 12 full model build session)
 Branch: `claude/oracle-historical-extraction-handoff-7dn6cr` (remote =
 DrakeKrommenhoek/orcl-to-the-moon). Rebuilt 2026-07-21 on top of
 `claude/oracle-historical-extraction-pilot-r6o3ov`, which carries the actual
@@ -10,8 +10,8 @@ that actually held the completed work.
 
 ## Current phase
 
-**Gate 11 (model checks) COMPLETE.** Gates 1-10 complete (see below).
-**Next: Gate 12 (full model build).**
+**Gate 12 (full model build) COMPLETE.** Gates 1-11 complete (see below).
+**Next: Gate 13 (valuation).**
 
 ## Completed work
 
@@ -103,6 +103,21 @@ that actually held the completed work.
   Re-attempted LibreOffice recalculation (290s budget) — still hangs,
   confirming Gate 10's finding is persistent, not a one-off. Balance-sheet/
   cash-flow checks correctly deferred to Gate 12 (schedules don't exist yet).
+- **Gate 12 (this session): full model build.** See `GATE_12_REVIEW.md` and
+  **D-024** in `decision_log.md`. Added four tabs to
+  `12_Model/development/ORCL_8Q_Model_v0.3_Gate12.xlsx` (v0.2 archived
+  first): Capex & Depreciation (splits depreciation from amortization for the
+  first time; re-linked Margin & EBITDA's D&A line to it); Debt, Leases &
+  Cash (debt roll-forward and lease-commencement schedule off the FY26 Q4
+  actual and D-020's scenario-selected endpoints, net issuance/OCF as
+  explicit plugs since no issuance schedule is disclosed); Equity & Shares
+  (diluted shares pull D-020 directly, not re-derived from a circular ATM-
+  price assumption); Cash Flow & Returns (four of D-021's five mandated
+  valuation controls — ROIC explicitly not built, deferred to Gate 13).
+  Checks tab gained CHECK_080/CHECK_100 (debt/cash ties, true by
+  construction). Verified via a full-chain Python replica of the Base
+  scenario (FY27 EBITDA ~$45.1B/FCF ~-$26.7B/leverage ~5.4x; FY28 EBITDA
+  ~$71.8B/FCF ~-$17.0B/leverage ~4.8x, improving as expected).
 
 ## Work in progress
 
@@ -127,25 +142,30 @@ None mid-flight. Clean stopping point.
 8. Pre-Gate-12 action items: four targeted FY26 10-K footnote re-reads
    (useful lives, capitalized interest, BYOH treatment, nonoperating
    investments) — see driver-doc §7.
-9. GAAP operating margin has no ratified scenario range (D-020 covers GAAP
-   gross margin and non-GAAP operating margin, not GAAP operating margin) —
-   held flat at the FY26 actual in the Gate 10 model; Gate 12 should either
-   derive it from the historical GAAP/non-GAAP opex bridge or get it ratified.
+9. GAAP operating margin still has no ratified scenario range (D-020 covers
+   GAAP gross margin and non-GAAP operating margin, not GAAP operating
+   margin) — held flat at the FY26 actual through Gate 12; either derive it
+   from the historical GAAP/non-GAAP opex bridge or get it ratified.
 10. LibreOffice headless recalculation does not work in this sandbox (hangs
     indefinitely even on a trivial one-formula test file, re-confirmed at
     Gate 11 with a 290s budget) — future sessions building on the model
     should verify formulas by opening the file in real Excel/Sheets, or retry
     `scripts/recalc.py` in case a future environment doesn't have this
     limitation.
+11. Gate 12's net debt issuance and implied OCF are plugs, not a bottom-up
+    build (no issuance schedule or dividend/buyback line is separately
+    modeled); the lease-commencement schedule is an even 3-year spread, not
+    the real (undisclosed) timing; D-021's fifth control (incremental ROIC)
+    is not built — needs an invested-capital base, deferred to Gate 13.
 
 ## Next recommended action
 
-Run Gate 12 (full model build) per `GATE_11_REVIEW.md` §5: add debt/lease
-roll-forward, depreciation-by-vintage (confirm D-019 first), ATM/dilution
-mechanics, diluted shares, and the balance-sheet/cash-flow schedules to
-`12_Model/development/ORCL_8Q_Model_v0.2_Gate11.xlsx`; then expand the Checks
-tab with CHECK_080 (debt roll-forward), CHECK_100 (cash tie), and a
-forecast-side GAAP/non-GAAP bridge; close the GAAP-operating-margin gap.
+Run Gate 13 (valuation) per `GATE_12_REVIEW.md` §4: assign real EV/NTM EBITDA
+and P/NTM EPS multiples (still blocked on Q-08/C-09 without live peer market
+data or an explicit user-approved assumption set), compute NTM metrics at
+each of the four valuation dates, build the enterprise-to-equity bridge
+(pending Q-11 preferred treatment and Q-13 lease convention), and produce the
+bear/base/bull per-share price targets.
 
 ## Restart note
 
