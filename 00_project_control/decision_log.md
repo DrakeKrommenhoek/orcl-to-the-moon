@@ -310,3 +310,23 @@ near the user's own $150 thesis target, a useful sanity signal that the
 mechanism isn't broken, never to be quoted as a real price target. Verified
 via a full-chain Python replica matching the actual formulas cell-by-cell.
 Full detail: `GATE_13_REVIEW.md`.
+
+## D-026 · 2026-07-21 · Gate 14 sensitivities — illustrative bear/base/bull range
+Added a "Sensitivities (Gate 14)" tab to `ORCL_8Q_Model_v0.5_Gate14.xlsx`
+(v0.4 archived first): Bear/Bull NTM revenue and D&A computed directly from
+the Scenario Assumptions Bear/Bull columns (the Control Panel switch only
+drives one case at a time, so this bypasses it for a genuine three-case
+comparison); bridge components (debt/cash/shares) pulling each scenario's own
+D-020 ending range; and — per the user's explicit instruction to proceed
+with the illustrative multiple — the actual bear/base/bull illustrative
+price triad at the FY27 Q1 valuation date: **Bear ~$96/share (10.0x), Base
+~$166/share (13.0x), Bull ~$244/share (16.0x)**, correctly ordered bear <
+base < bull. Also added a one-way sensitivity table (Base NTM EBITDA held
+fixed, multiple varied 9x-17x). Same illustrative-only labeling as Gate 13
+throughout — Q-08/C-09 remain unresolved, so no real multiple exists yet.
+Scope explicitly limited to the first valuation date via a closed-form
+approximation, not a full quadrupled quarterly Bear/Bull rebuild across all
+four dates (documented as a reasonable future refinement, not a gap in this
+gate's deliverable). Verified via an independent Python replica matching the
+actual formulas, both individually and via the monotonic bear<base<bull
+ordering as a sanity check. Full detail: `GATE_14_REVIEW.md`.

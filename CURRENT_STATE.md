@@ -1,6 +1,6 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-21 (Gate 13 valuation session — partial, blocked on Q-08)
+Last updated: 2026-07-21 (Gate 14 sensitivities session — illustrative multiple)
 Branch: `claude/oracle-historical-extraction-handoff-7dn6cr` (remote =
 DrakeKrommenhoek/orcl-to-the-moon). Rebuilt 2026-07-21 on top of
 `claude/oracle-historical-extraction-pilot-r6o3ov`, which carries the actual
@@ -10,12 +10,13 @@ that actually held the completed work.
 
 ## Current phase
 
-**Gate 13 (valuation) PARTIALLY COMPLETE** — NTM aggregation, the enterprise-
-to-equity bridge, and the Net Income/EPS mechanics are built; real multiple
-assignment (the one number needed to produce an actual per-share price
-target) is genuinely blocked on Q-08/C-09 (no authenticated market-data
-source). Gates 1-12 complete (see below). **Next: resolve Q-08 to finish
-Gate 13, or proceed to Gate 14 (sensitivities) on the illustrative multiple.**
+**Gate 14 (sensitivities) COMPLETE, on the illustrative multiple** — per
+explicit user instruction. Gate 13 (valuation) remains partially complete:
+NTM aggregation, the enterprise-to-equity bridge, and Net Income/EPS
+mechanics are built; real multiple assignment is still genuinely blocked on
+Q-08/C-09 (no authenticated market-data source). Gates 1-12 complete (see
+below). **Next: Gate 15 (investment interpretation), or resolve Q-08 first
+to redo Gates 13-14 with a real multiple.**
 
 ## Completed work
 
@@ -138,6 +139,24 @@ Gate 13, or proceed to Gate 14 (sensitivities) on the illustrative multiple.**
   demonstrates the mechanism produces $165.57/share at the first valuation
   date — a sanity signal only, never a price target. Verified via a
   full-chain Python replica matching the actual formulas cell-by-cell.
+- **Gate 14 (this session): sensitivities, illustrative multiple.** See
+  `GATE_14_REVIEW.md` and **D-026** in `decision_log.md`. Added a
+  "Sensitivities (Gate 14)" tab to
+  `12_Model/development/ORCL_8Q_Model_v0.5_Gate14.xlsx` (v0.4 archived
+  first): Bear/Bull NTM revenue, D&A, and bridge components computed
+  directly from the Scenario Assumptions Bear/Bull columns (bypassing the
+  single Control-Panel switch, which only drives one case at a time) for a
+  genuine three-case comparison at the FY27 Q1 valuation date. **Produced
+  the illustrative bear/base/bull price triad the project exists to
+  deliver: Bear ~$96/share (10.0x), Base ~$166/share (13.0x), Bull
+  ~$244/share (16.0x)** — correctly ordered, using the Framework's own
+  unadopted candidate multiples per the user's explicit instruction to
+  proceed on that basis. Also added a one-way multiple-sensitivity table
+  (9x-17x). Single-valuation-date, closed-form approximation — not a full
+  quadrupled quarterly rebuild across all four dates. Q-08/C-09 remain
+  unresolved, so all of this stays illustrative until a real multiple is
+  sourced. Verified via an independent Python replica matching the actual
+  formulas and confirming the bear<base<bull ordering.
 
 ## Work in progress
 
@@ -190,14 +209,13 @@ None mid-flight. Clean stopping point.
 
 ## Next recommended action
 
-Resolve Q-08 to finish Gate 13: either authenticate the FactSet MCP
-connector, or have the user supply current, as-of-dated peer market data
-(prices, market caps, NTM consensus) for the ratified peer set (D-021). Once
-available, fill the yellow-highlighted multiple cells on the "Valuation
-(Gate 13)" tab and the bear/base/bull per-share price targets fall out
-mechanically — the NTM aggregation and EV-to-equity bridge are already built.
-Alternatively, proceed to Gate 14 (sensitivities) using the illustrative
-multiple, carrying the same "illustrative, not real" labeling through.
+Two paths, either is reasonable: (a) run Gate 15 (investment interpretation)
+using the illustrative bear/base/bull range (~$96/$166/$244) as a stand-in,
+same illustrative-only caveat carried through; or (b) resolve Q-08 first —
+authenticate the FactSet MCP connector, or have the user supply current,
+as-of-dated peer market data for the ratified peer set (D-021) — then redo
+Gates 13-14 with a real multiple before Gate 15, so the interpretation memo
+starts from real numbers instead of illustrative ones.
 
 ## Restart note
 
