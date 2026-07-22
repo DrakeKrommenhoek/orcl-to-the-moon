@@ -286,3 +286,27 @@ full-chain Python replica of the Base scenario (FY27 EBITDA ~$45.1B/FCF
 improving as the Framework's own base case narrative expects) and a repeated
 zero-count check for unquoted cross-sheet references. Full detail:
 `GATE_12_REVIEW.md`.
+
+## D-025 · 2026-07-21 · Gate 13 valuation — buildable portion
+Added a Net Income & EPS bridge (interest expense → pre-tax income → tax at
+a held-flat trailing FY26 effective rate of 12.6% → net income → less
+preferred dividends → ÷ diluted shares → GAAP EPS) to Margin & EBITDA, and a
+new "Valuation (Gate 13)" tab to `ORCL_8Q_Model_v0.4_Gate13.xlsx` (v0.3
+archived first): NTM revenue/EBITDA/EPS aggregation at exactly the four
+Framework-specified valuation dates; the enterprise-to-equity bridge
+(gross debt, on-balance lease liabilities, preferred, cash + marketable
+securities) pulled at each valuation date's just-completed quarter, with
+Q-11 (preferred debt-like default) and Q-13 (leases included) flagged as
+unresolved rather than silently assumed settled. **Real multiple assignment
+left genuinely blank (yellow-highlighted cells)** — this is Gate 13's one
+external blocker, not a design choice: Q-08 (FactSet unauthenticated) and
+C-09 (existing comp table stale/single-sourced) mean no real, as-of-dated
+EV/NTM EBITDA or P/NTM EPS multiple can be sourced this session, and filling
+it from general knowledge would violate the no-fabricated-data rule. An
+explicitly-labeled illustrative-only section demonstrates the mechanism
+using the Framework's own unadopted 12x-14x base-case candidate (midpoint
+13.0x), producing $165.57/share at the first valuation date — coincidentally
+near the user's own $150 thesis target, a useful sanity signal that the
+mechanism isn't broken, never to be quoted as a real price target. Verified
+via a full-chain Python replica matching the actual formulas cell-by-cell.
+Full detail: `GATE_13_REVIEW.md`.

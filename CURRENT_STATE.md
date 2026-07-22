@@ -1,6 +1,6 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-21 (Gate 12 full model build session)
+Last updated: 2026-07-21 (Gate 13 valuation session — partial, blocked on Q-08)
 Branch: `claude/oracle-historical-extraction-handoff-7dn6cr` (remote =
 DrakeKrommenhoek/orcl-to-the-moon). Rebuilt 2026-07-21 on top of
 `claude/oracle-historical-extraction-pilot-r6o3ov`, which carries the actual
@@ -10,8 +10,12 @@ that actually held the completed work.
 
 ## Current phase
 
-**Gate 12 (full model build) COMPLETE.** Gates 1-11 complete (see below).
-**Next: Gate 13 (valuation).**
+**Gate 13 (valuation) PARTIALLY COMPLETE** — NTM aggregation, the enterprise-
+to-equity bridge, and the Net Income/EPS mechanics are built; real multiple
+assignment (the one number needed to produce an actual per-share price
+target) is genuinely blocked on Q-08/C-09 (no authenticated market-data
+source). Gates 1-12 complete (see below). **Next: resolve Q-08 to finish
+Gate 13, or proceed to Gate 14 (sensitivities) on the illustrative multiple.**
 
 ## Completed work
 
@@ -118,6 +122,22 @@ that actually held the completed work.
   construction). Verified via a full-chain Python replica of the Base
   scenario (FY27 EBITDA ~$45.1B/FCF ~-$26.7B/leverage ~5.4x; FY28 EBITDA
   ~$71.8B/FCF ~-$17.0B/leverage ~4.8x, improving as expected).
+- **Gate 13 (this session, partial): valuation.** See `GATE_13_REVIEW.md` and
+  **D-025** in `decision_log.md`. Added a Net Income & EPS bridge to Margin &
+  EBITDA (interest, tax at a held-flat 12.6% trailing rate, preferred
+  dividends, diluted shares → GAAP EPS) and a new "Valuation (Gate 13)" tab
+  to `12_Model/development/ORCL_8Q_Model_v0.4_Gate13.xlsx` (v0.3 archived
+  first): NTM revenue/EBITDA/EPS aggregation at the four Framework-specified
+  valuation dates, and the enterprise-to-equity bridge components at each
+  date's just-completed quarter (Q-11/Q-13 defaults flagged as unresolved,
+  not silently settled). **Real multiple assignment left genuinely blank**
+  (yellow-highlighted cells) — Q-08/C-09 still block sourcing a real,
+  as-of-dated EV/NTM EBITDA or P/NTM EPS multiple; filling it from general
+  knowledge would violate the no-fabricated-data rule. An explicitly-labeled
+  illustrative-only section (Framework's unadopted 13.0x base midpoint)
+  demonstrates the mechanism produces $165.57/share at the first valuation
+  date — a sanity signal only, never a price target. Verified via a
+  full-chain Python replica matching the actual formulas cell-by-cell.
 
 ## Work in progress
 
@@ -157,15 +177,27 @@ None mid-flight. Clean stopping point.
     modeled); the lease-commencement schedule is an even 3-year spread, not
     the real (undisclosed) timing; D-021's fifth control (incremental ROIC)
     is not built — needs an invested-capital base, deferred to Gate 13.
+12. Effective tax rate (Margin & EBITDA tab) is held flat at the trailing
+    FY26 actual (12.6%) — same gap pattern as GAAP operating margin: no
+    ratified D-020 range exists for it.
+13. **Gate 13's real multiple assignment is blocked**, not deferred by
+    choice: Q-08 (no authenticated consensus/market-data source) and C-09
+    (existing comp table stale/single-sourced) mean the "Valuation (Gate 13)"
+    tab's multiple cells are intentionally blank. This is the only remaining
+    external blocker to producing an actual bear/base/bull price target —
+    everything else in the pipeline (revenue → EBITDA → EPS → NTM → EV
+    bridge) is built and ready to receive a real multiple.
 
 ## Next recommended action
 
-Run Gate 13 (valuation) per `GATE_12_REVIEW.md` §4: assign real EV/NTM EBITDA
-and P/NTM EPS multiples (still blocked on Q-08/C-09 without live peer market
-data or an explicit user-approved assumption set), compute NTM metrics at
-each of the four valuation dates, build the enterprise-to-equity bridge
-(pending Q-11 preferred treatment and Q-13 lease convention), and produce the
-bear/base/bull per-share price targets.
+Resolve Q-08 to finish Gate 13: either authenticate the FactSet MCP
+connector, or have the user supply current, as-of-dated peer market data
+(prices, market caps, NTM consensus) for the ratified peer set (D-021). Once
+available, fill the yellow-highlighted multiple cells on the "Valuation
+(Gate 13)" tab and the bear/base/bull per-share price targets fall out
+mechanically — the NTM aggregation and EV-to-equity bridge are already built.
+Alternatively, proceed to Gate 14 (sensitivities) using the illustrative
+multiple, carrying the same "illustrative, not real" labeling through.
 
 ## Restart note
 
